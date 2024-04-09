@@ -1,3 +1,5 @@
+# Next.js 14.1.4 starting project template
+
 <p align="center">
   <br />
   <a href="https://rikardhallberg.com">
@@ -34,7 +36,7 @@
 
 ## What is this repo?
 
-This is a [Next.js](https://nextjs.org/) project template built with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js][] project template built with [`create-next-app`][].
 This project is deployed on vercel.
 
 ```bash
@@ -44,6 +46,15 @@ pnpm run start
 
 # listening at localhost:3000
 ```
+
+## Why did you make it?
+
+After having configured my Next.js apps with boilerplate for the 4th time, I decided enough was enough.
+I needed a re-usable project template that can instantly start me off with code that I know works.
+
+I decided that making this open source will also be yet another learning opportunity. Primarily
+learning best practices for public repositories. As I mention later in this README, I am studying
+the [Node.js repository][] to learn more about what standards they use.
 
 ## Contributing
 
@@ -56,7 +67,8 @@ It also doesn't hurt to have a look around the repository.
 
 ## Deployment
 
-The Website is automatically deployed to [Vercel](https://vercel.com) through its GitHub App integration when new pushes happen on the `main` branch.
+The Website is automatically deployed to [Vercel][] through its GitHub App integration
+when new pushes happen on the `main` branch.
 
 Details regarding the deployment are not publicly accessible.
 
@@ -66,9 +78,20 @@ Details regarding the deployment are not publicly accessible.
 
 [Contribution Guidelines][]
 
-[Code of Conduct]: ./CODE_OF_CONDUCT.md
-[Contribution Guidelines]: ./CONTRIBUTING.md
+## Attribution
+
+Some of the documentation and code is inspired/based on the [Node.js repository][].
+For this reason, I want to thank them for making their software open source, as studying it has helped
+me immensely with learning more about how to ship better software.
 
 ## License
 
-Licensed under the [MIT License](./LICENSE)
+Licensed under the [MIT License][]
+
+[Next.js]: https://nextjs.org/
+[`create-next-app`]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
+[Node.js repository]: https://github.com/nodejs/nodejs.org
+[Code of Conduct]: ./CODE_OF_CONDUCT.md
+[Contribution Guidelines]: ./CONTRIBUTING.md
+[Vercel]: https://vercel.com
+[MIT License]: ./LICENSE
