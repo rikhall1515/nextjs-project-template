@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js 14.1.4 starting project template
 
-## Getting Started
+<p align="center">
+  <br />
+  <a href="https://rikardhallberg.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./public/static/logos/Rikard_DARK.svg">
+      <img src="./public/static/logos/Rikard_LIGHT.svg" width="200px">
+    </picture>
+  </a>
+</p>
 
-First, run the development server:
+<p align="center">
+  <h1 align="center">
+    <a href="https://nextjs-project-template-rosy.vercel.app/">Next.js Project Template</a>
+  </h1>
+</p>
+
+<p align="center">
+  <a title="MIT License" href="LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License" />
+  </a>
+  <a title="Vercel" href="https://vercel.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-white">
+      <img src="https://img.shields.io/badge/powered%20by-Vercel%20%E2%96%B2-black" alt="Powered by Vercel">
+    </picture>
+  </a>
+  <br />
+  <a title="Commitizen friendly" href="https://commitizen-tools.github.io/commitizen/">
+    <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly">
+  </a>
+  <br />
+  <br />
+</p>
+
+## What is this repo?
+
+This is a [Next.js][] project template built with [`create-next-app`][].
+This project is deployed on vercel.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install --frozen-lockfile
+pnpm run build
+pnpm run start
+
+# listening at localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Why did you make it?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+After having configured my Next.js apps with boilerplate for the 4th time, I decided enough was enough.
+I needed a re-usable project template that can instantly start me off with code that I know works.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+I decided that making this open source will also be yet another learning opportunity. Primarily
+learning best practices for public repositories. As I mention later in this README, I am studying
+the [Node.js repository][] to learn more about what standards they use.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+This repository has a [Code of Conduct][] that you should read first.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Any person who wants to contribute to the Website is welcome! Please read the [Contribution Guidelines][]
+to see what the next steps are.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+It also doesn't hurt to have a look around the repository.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The Website is automatically deployed to [Vercel][] through its GitHub App integration
+when new pushes happen on the `main` branch.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Details regarding the deployment are not publicly accessible.
+
+## Relevant links
+
+[Code of Conduct][]
+
+[Contribution Guidelines][]
+
+## Attribution
+
+Some of the documentation and code is inspired/based on the [Node.js repository][].
+For this reason, I want to thank them for making their software open source, as studying it has helped
+me immensely with learning more about how to ship better software.
+
+## License
+
+Licensed under the [MIT License][]
+
+[Next.js]: https://nextjs.org/
+[`create-next-app`]: https://github.com/vercel/next.js/tree/canary/packages/create-next-app
+[Node.js repository]: https://github.com/nodejs/nodejs.org
+[Code of Conduct]: ./CODE_OF_CONDUCT.md
+[Contribution Guidelines]: ./CONTRIBUTING.md
+[Vercel]: https://vercel.com
+[MIT License]: ./LICENSE
