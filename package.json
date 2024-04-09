@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "nextjs-project-template",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,8 @@
     "lint:strict": "next lint '*/**/*.{js,jsx,ts,tsx}'",
     "prettier": "prettier --write */**/*.{js,jsx,json,ts,tsx,scss,css,md}",
     "prepare": "husky",
-    "cm": "cz"
+    "cm": "cz",
+    "check-types": "tsc --noEmit --pretty"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.0.4",
@@ -40,13 +41,19 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
+    "@commitlint/cz-commitlint": "19.2.0",
+    "@commitlint/types": "19.0.3",
+    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/git": "10.0.1",
     "@types/node": "20.12.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "~10.4.19",
     "commitizen": "4.3.0",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "9.0.0",
+    "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "eslint-config-prettier": "9.1.0",
     "husky": "9.0.11",
@@ -54,12 +61,37 @@
     "postcss": "^8",
     "prettier": "3.2.5",
     "prettier-plugin-tailwindcss": "0.5.13",
+    "semantic-release": "23.0.7",
     "tailwindcss": "^3.4.3",
     "typescript": "~5.4.4"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "@commitlint/cz-commitlint"
     }
-  }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits"
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
+  },
+  "author": "rikhall1515 (https://github.com/rikhall1515)"
 }
