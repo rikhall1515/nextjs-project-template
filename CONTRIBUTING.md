@@ -1,9 +1,10 @@
 # Contributing to the Next.js template
 
-- [Code of Conduct](#code-of-conduct)
-- [Issues](#issues)
-- [Pull Requests](#pull-requests)
-- [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin)
+- [Contributing to the Next.js template](#contributing-to-the-nextjs-template)
+  - [Code of Conduct](#code-of-conduct)
+  - [Issues](#issues)
+  - [Pull Requests](#pull-requests)
+  - [Developer's Certificate of Origin 1.1](#developers-certificate-of-origin-11)
 
 ## [Code of Conduct](./CODE_OF_CONDUCT.md)
 
