@@ -1,8 +1,3 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
-
 version: 2
 updates:
   - package-ecosystem: github-actions
@@ -14,11 +9,11 @@ updates:
     commit-message:
       prefix: meta
     open-pull-requests-limit: 10
-  - package-ecosystem: npm # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "monthly"
+  - package-ecosystem: npm
+    directory: "/"
     versioning-strategy: increase
+    schedule:
+      interval: monthly
     labels:
       - "github_actions:pull-request"
     commit-message:
@@ -33,11 +28,22 @@ updates:
           - "stylelint-*"
         exclude-patterns:
           - "eslint-plugin-storybook"
+      storybook:
+        patterns:
+          - "storybook"
+          - "@storybook/*"
+          - "eslint-plugin-storybook"
+      testing:
+        patterns:
+          - "@testing-library/*"
+          - "@types/testing-library*"
+          - "@types/jest"
+          - "jest"
+          - "jest-*"
       next-js:
         patterns:
           - "next"
           - "turbo"
-          - "next-mdx-remote"
           - "next-sitemap"
           - "next-themes"
           - "@vercel/*"

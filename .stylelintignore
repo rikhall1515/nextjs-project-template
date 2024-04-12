@@ -1,0 +1,14 @@
+# Next.js files
+.next
+.turbo
+.swc
+build
+
+# Public Folder
+public
+
+# Jest
+coverage
+
+# Storybook
+storybook-static

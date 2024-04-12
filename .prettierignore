@@ -1,17 +1,37 @@
-.husky
-dist
-.next
-.cache
-package-lock.json
-pnpm-lock.yaml
-public
+# Commonly ignored Node.js files
 node_modules
-next-env.d.ts
-next.config.mjs
-package.json
-postcss.config.js
-tailwind.config.ts
-tsconfig.json
-components.json
-.lintstagedrc.js
+npm-debug.log
+.npm
+
+# Next.js Build Output
+.next
+build
+
+# Jest
+coverage
+.swc
+junit.xml
+
+# Storybook
+storybook-static
+build-storybook.log
+.nyc_output
+
+# Vercel Files
 .vercel
+.turbo
+cache
+
+# Cache Files
+.eslintjscache
+.eslintmdcache
+.stylelintcache
+.prettiercache
+
+
+# TypeScript
+tsconfig.tsbuildinfo
+
+
+# Metadata Files
+CODEOWNERS
