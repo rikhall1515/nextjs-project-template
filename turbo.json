@@ -1,0 +1,112 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["NODE_ENV"],
+  "pipeline": {
+    "serve": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL"
+      ]
+    },
+    "build": {
+      "inputs": [
+        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx}",
+        "{app,components,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "*.{json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL"
+      ]
+    },
+    "start": {
+      "cache": false,
+      "persistent": true,
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL"
+      ]
+    },
+    "deploy": {
+      "inputs": [
+        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx}",
+        "{app,components,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "*.{json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "NEXT_PUBLIC_VERCEL_ENV",
+        "NEXT_PUBLIC_BASE_URL",
+        "NEXT_PUBLIC_VERCEL_URL"
+      ]
+    },
+    "lint:js": {
+      "cache": false,
+      "outputs": [".eslintjscache"]
+    },
+    "lint:css": {
+      "cache": false,
+      "outputs": [".stylelintcache"]
+    },
+    "lint": {
+      "cache": false,
+      "outputs": [".eslintjscache", ".stylelintcache"]
+    },
+    "lint:fix": {
+      "cache": false,
+      "outputs": [".eslintjscache", ".stylelintcache"]
+    },
+    "prettier": {
+      "cache": false,
+      "outputs": [".prettiercache"]
+    },
+    "prettier:fix": {
+      "cache": false,
+      "outputs": [".prettiercache"]
+    },
+    "format": {
+      "cache": false,
+      "outputs": [".eslintjscache", ".stylelintcache", ".prettiercache"]
+    },
+    "storybook": {
+      "cache": false,
+      "persistent": true
+    },
+    "storybook:build": {
+      "inputs": [
+        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx}",
+        "{app,components,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,css,json}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["storybook-static/**"]
+    },
+    "test:unit": {
+      "inputs": [
+        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx,mjs}",
+        "{app,components,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
+    },
+    "test": {
+      "inputs": [
+        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx,mjs}",
+        "{app,components,styles}/**/*.css",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "*.{md,mdx,json,ts,tsx,mjs,yml}"
+      ],
+      "outputs": ["coverage/**", "junit.xml"]
+    }
+  }
+}
