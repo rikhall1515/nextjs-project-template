@@ -141,7 +141,7 @@ devDependencies:
     version: 19.1.0
   '@commitlint/cz-commitlint':
     specifier: 19.2.0
-    version: 19.2.0(@types/node@20.12.5)(commitizen@4.3.0)(inquirer@9.2.17)(typescript@5.4.5)
+    version: 19.2.0(@types/node@20.12.5)(commitizen@4.3.0)(inquirer@9.2.18)(typescript@5.4.5)
   '@commitlint/types':
     specifier: 19.0.3
     version: 19.0.3
@@ -170,8 +170,8 @@ devDependencies:
     specifier: ~6.4.2
     version: 6.4.2(@types/jest@29.5.12)(jest@29.7.0)
   '@testing-library/react':
-    specifier: ~15.0.0
-    version: 15.0.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ~15.0.1
+    version: 15.0.1(react-dom@18.2.0)(react@18.2.0)
   '@testing-library/user-event':
     specifier: ~14.5.2
     version: 14.5.2(@testing-library/dom@10.0.0)
@@ -1659,7 +1659,7 @@ packages:
       ajv: 8.12.0
     dev: true
 
-  /@commitlint/cz-commitlint@19.2.0(@types/node@20.12.5)(commitizen@4.3.0)(inquirer@9.2.17)(typescript@5.4.5):
+  /@commitlint/cz-commitlint@19.2.0(@types/node@20.12.5)(commitizen@4.3.0)(inquirer@9.2.18)(typescript@5.4.5):
     resolution: {integrity: sha512-kudzHMY9/GxflGyAWMiisiBq2UkyQL1D1eWjGKoC66qQ+5jxRYeDaiVwTdPxYMnmehftNcpksZATDYKqdPP0Wg==}
     engines: {node: '>=v18'}
     peerDependencies:
@@ -1671,7 +1671,7 @@ packages:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       commitizen: 4.3.0(@types/node@20.12.5)(typescript@5.4.5)
-      inquirer: 9.2.17
+      inquirer: 9.2.18
       lodash.isplainobject: 4.0.6
       word-wrap: 1.2.5
     transitivePeerDependencies:
@@ -2158,6 +2158,11 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.3:
     resolution: {integrity: sha512-93zYdMES/c1D69yZiKDBj0V24vqNzB/koF26KPaagAfd3P/4gUlh3Dys5ogAK+Exi9QyzlD8x/08Zt7wIKcDcA==}
+    dev: true
+
+  /@inquirer/figures@1.0.0:
+    resolution: {integrity: sha512-3fw+7+77/duTnMJTeSS44wneszghI4tkr0m0xdIJabbYRe36ElzmsqyboMZ1nFRon6sT+ckVvYDVjwapKv+2sw==}
+    engines: {node: '>=18'}
     dev: true
 
   /@isaacs/cliui@8.0.2:
@@ -4359,8 +4364,8 @@ packages:
       redent: 3.0.0
     dev: true
 
-  /@testing-library/react@15.0.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Nb2Sq8MoSvGVdOGGppRqXeafLtvXCOwiOQtcbqCfkpVNZZNUqIjeSOwrfJ59zBfmZbAn8PitnWEzUKD1YwMrCg==}
+  /@testing-library/react@15.0.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-I8u4qqGAuBg7C1/kRB9n7Oz9Pc/UHEkmiQRbJziSG8B13eZfAcAUn8TSP26ZIvfSeb68CngmtZbKKcRqcQKa3g==}
     engines: {node: '>=18'}
     peerDependencies:
       react: ^18.0.0
@@ -9139,17 +9144,17 @@ packages:
       wrap-ansi: 7.0.0
     dev: true
 
-  /inquirer@9.2.17:
-    resolution: {integrity: sha512-Vr3Ia2ud5sGnioURkE69endl4SkeJcMzTF6SosKcX5GALJfId7C+JvO5ZZb6y1LOXnEofCPbwzoQ1q0e8Gaduw==}
+  /inquirer@9.2.18:
+    resolution: {integrity: sha512-Qzm+UP7L9beFyycZ9Nxzqj7WBgeJIaT4Ue0+2bmQp9yZXiUW2azrmBnp3vlInMw1wXkUmaM0hiMcht7CjJzASw==}
     engines: {node: '>=18'}
     dependencies:
+      '@inquirer/figures': 1.0.0
       '@ljharb/through': 2.3.13
       ansi-escapes: 4.3.2
       chalk: 5.3.0
       cli-cursor: 3.1.0
       cli-width: 4.1.0
       external-editor: 3.1.0
-      figures: 3.2.0
       lodash: 4.17.21
       mute-stream: 1.0.0
       ora: 5.4.1
