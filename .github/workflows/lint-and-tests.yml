@@ -84,7 +84,7 @@ jobs:
           # or the merge_group `ref`
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
       - name: Set up pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
         with:
           version: 8.15.6
       - name: Restore Lint Cache
@@ -194,7 +194,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref || github.ref }}
           fetch-depth: 0
       - name: Set up pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d # v3.0.0
         with:
           version: 8.15.6
       - name: Set up Node.js
