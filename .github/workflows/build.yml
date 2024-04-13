@@ -98,7 +98,7 @@ jobs:
         # We want to avoid npm from running the Audit Step and Funding messages on a CI environment
         # We also use `npm i` instead of `npm ci` so that the node_modules/.cache folder doesn't get deleted
         # We also use `--omit=dev` to avoid installing devDependencies as we don't need them during the build step
-        run: CI=true pnpm i -P
+        run: pnpm i -P
 
       - name: Build Next.js (ISR)
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
