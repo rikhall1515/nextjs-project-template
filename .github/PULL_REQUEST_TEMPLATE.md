@@ -60,7 +60,7 @@ You can check the items by adding an `x` between the brackets, like this: `[x]`
 -->
 
 - [ ] I have read the [Contributing Guidelines](/CONTRIBUTING.md) and made commit messages that follow the guideline.
-- [ ] I have run `pnpm i` before staging any files, and not bypassed `husky` when committing changes.
-- [ ] I have successfully passed local tests.
-- [ ] I have successfully run `npm run build` without any website errors.
+- [ ] I have run `npx turbo format` to ensure the code follows the style guide.
+- [ ] I have run `npx turbo test` to check if all tests are passing.
+- [ ] I have run `npx turbo build` to check if the website builds without errors.
 - [ ] I've covered new added functionality with unit tests if necessary.
