@@ -1,0 +1,2 @@
+Contact: r15.hallberg@gmail.com
+Policy: https://github.com/rikhall1515/nextjs-project-template/security
