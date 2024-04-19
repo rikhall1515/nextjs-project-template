@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import "./globals.css";
+import Providers from "@/context";
 import { env } from "@/env/client";
 import { VERCEL_ENV } from "@/next.constants.mjs";
 const inter = Inter({ subsets: ["latin"] });
@@ -33,9 +34,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        {children}
+        <Providers>{children}</Providers>
         {VERCEL_ENV && (
           <>
             <Analytics />
