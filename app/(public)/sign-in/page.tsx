@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Sign In - rikhall.proj",
     description: "The sign in page for the NextJS template.",
     url: env.NEXT_PUBLIC_BASE_URL,
-    images: "/next-data/og",
+    images: "/next-data/og?title=Sign%20In",
     siteName: "RikardTemplate",
     locale: "en_US",
     type: "website",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     title: "Sign In - rikhall.proj",
     description: "The sign in page for the NextJS template.",
-    images: "/next-data/og",
+    images: "/next-data/og?title=Sign%20In",
     card: "summary_large_image",
     creator: "@rikhall_",
   },
