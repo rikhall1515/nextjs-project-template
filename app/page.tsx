@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "This is a Next.JS template designed and made by Rikard Hallberg.",
     images: "/static/og.png",
     card: "summary_large_image",
-    creator: "@rikhall1515",
+    creator: "@rikhall_",
   },
 };
 
