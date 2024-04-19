@@ -45,3 +45,13 @@ export const THEME_STORAGE_KEY = "theme";
  * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+/**
+ * This is used for defining a default time of when `next-data` and other dynamically generated
+ * but static-enabled pages should be regenerated.
+ *
+ * Note that this is a custom Environment Variable that can be defined by us when necessary
+ */
+export const VERCEL_REVALIDATE = Number(
+  process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
+);
