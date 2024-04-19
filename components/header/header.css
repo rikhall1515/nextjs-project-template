@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 8rem;
+  --header-height-scrolled: 4.5rem;
+}
+
+@layer base {
+  header.scrolled {
+    height: var(--header-height-scrolled);
+
+    @apply border-border;
+    @apply bg-background;
+  }
+
+  .menuBtn {
+    --size: 1.5rem;
+    --duration: 250ms;
+
+    position: relative;
+    transform: rotate(0deg);
+    transition: var(--duration) * 2 ease-in-out;
+  }
+
+  .menuBtn > span {
+    display: block;
+    height: calc(var(--size) / 4);
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: var(--duration) ease-in-out;
+    width: var(--size);
+
+    @apply bg-foreground;
+  }
+
+  .menuBtn span:nth-child(1) {
+    top: 0;
+  }
+
+  .menuBtn span:nth-child(2) {
+    top: calc(var(--size) / 4 + var(--size) / 8);
+  }
+
+  .menuBtn span:nth-child(3) {
+    top: calc(var(--size) / 2 + var(--size) / 4);
+  }
+
+  .menuBtn.opened span:nth-child(1) {
+    top: calc(var(--size) / 4 + var(--size) / 8);
+    transform: rotate(135deg);
+  }
+
+  .menuBtn.opened span:nth-child(2) {
+    left: -60px;
+    opacity: 0;
+  }
+
+  .menuBtn.opened span:nth-child(3) {
+    top: calc(var(--size) / 4 + var(--size) / 8);
+    transform: rotate(-135deg);
+  }
+}
