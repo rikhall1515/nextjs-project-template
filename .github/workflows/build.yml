@@ -110,7 +110,12 @@ jobs:
         # We want a ISR build on CI to ensure that regular Next.js builds work as expected.
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ steps.turborepo_arguments.outputs.turbo_args }}` is a string substitution coming from a previous step
-        run: npx --package=turbo@latest -- turbo build ${{ steps.turborepo_arguments.outputs.turbo_args }}
+        run: cross-env
+          NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}
+          NEXT_PUBLIC_SITE_NAME=${{ secrets.NEXT_PUBLIC_SITE_NAME }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY=${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL=${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          npx --package=turbo@latest -- turbo build ${{ steps.turborepo_arguments.outputs.turbo_args }}
         env:
           # We want to ensure we have enough RAM allocated to the Node.js process
           # this should be a last resort in case by any chances the build memory gets too high
