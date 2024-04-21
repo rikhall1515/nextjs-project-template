@@ -4,48 +4,124 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* hsl(0 0% 98%) */
+    --background: 0 0% 98%;
+
+    /* hsl(274 84% 5%) */
+    --foreground: 274 84% 5%;
+
+    /* hsl(0 0% 100%) */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+
+    /* hsl(274 84% 5%) */
+    --card-foreground: 274 84% 5%;
+
+    /* hsl(0 0% 100%) */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+
+    /* hsl(274 84% 5%) */
+    --popover-foreground: 274 84% 5%;
+
+    /* hsl(274 90% 47%) */
+    --primary: 274 90% 47%;
+
+    /* hsl(270 40% 98%) */
+    --primary-foreground: 270 40% 98%;
+
+    /* hsl(238 82% 38%) */
+    --secondary: 238 82% 38%;
+
+    /* hsl(0 0% 98%) */
+    --secondary-foreground: 0 0% 98%;
+
+    /* hsl(270 40% 96%) */
+    --muted: 270 40% 96%;
+
+    /* hsl(250 16% 47%) */
+    --muted-foreground: 250 16% 47%;
+
+    /* hsl(169 90% 61%) */
+    --accent: 169 90% 61%;
+
+    /* hsl(274 47% 11%) */
+    --accent-foreground: 274 47% 11%;
+
+    /* hsl(0 84% 60%) */
+    --destructive: 0 84% 60%;
+
+    /* hsl(270 40% 98%) */
+    --destructive-foreground: 270 40% 98%;
+
+    /* hsl(270 32% 91%) */
+    --border: 270 32% 91%;
+
+    /* hsl(270 32% 91%) */
+    --input: 270 32% 91%;
+
+    /* hsl(274 84% 5%) */
+    --ring: 274 84% 5%;
     --radius: 0.5rem;
+    --page-x-spacing: 3rem;
+    --page-x-spacing2: 2rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* hsl(274 84% 5%) */
+    --background: 274 84% 5%;
+
+    /* hsl(270 40% 98%) */
+    --foreground: 270 40% 98%;
+
+    /* hsl(274 84% 10%) */
+    --card: 274 84% 10%;
+
+    /* hsl(270 40% 98%) */
+    --card-foreground: 270 40% 98%;
+
+    /* hsl(274 84% 10%) */
+    --popover: 274 84% 10%;
+
+    /* hsl(270 40% 98%) */
+    --popover-foreground: 270 40% 98%;
+
+    /* hsl(274 70% 61%) */
+    --primary: 274 70% 61%;
+
+    /* hsl(274 47% 11%) */
+    --primary-foreground: 274 47% 11%;
+
+    /* hsl(238 72% 58%) */
+    --secondary: 238 72% 58%;
+
+    /* hsl(270 40% 98%) */
+    --secondary-foreground: 270 40% 98%;
+
+    /* hsl(260 33% 18%) */
+    --muted: 260 33% 18%;
+
+    /* hsl(250 20% 65%) */
+    --muted-foreground: 250 20% 65%;
+
+    /* hsl(169 70% 41%) */
+    --accent: 169 70% 41%;
+
+    /* hsl(270 40% 98%) */
+    --accent-foreground: 270 40% 98%;
+
+    /* hsl(0 63% 33%) */
+    --destructive: 0 63% 33%;
+
+    /* hsl(270 40% 98%) */
+    --destructive-foreground: 270 40% 98%;
+
+    /* hsl(260 33% 18%) */
+    --border: 260 33% 18%;
+
+    /* hsl(260 33% 18%) */
+    --input: 260 33% 18%;
+
+    /* hsl(213 27% 84%) */
+    --ring: 270 27% 84%;
   }
 }
 
@@ -54,7 +130,115 @@
     @apply border-border;
   }
 
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-4xl;
+  }
+
+  h3 {
+    @apply text-3xl;
+  }
+
+  h4 {
+    @apply text-2xl;
+  }
+
+  h5,
+  h6 {
+    @apply text-xl;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold
+      text-foreground;
+  }
+
+  p {
+    @apply text-foreground;
+  }
+
   body {
     @apply bg-background text-foreground;
+  }
+
+  @media (width >= 64rem) {
+    :root {
+      --page-x-spacing: 8rem;
+      --page-x-spacing2: 7rem;
+    }
+  }
+}
+
+@layer utilities {
+  .pxPage {
+    @apply m:px-[--page-x-spacing] px-6;
+  }
+
+  .pxPageTwo {
+    @apply m:px-[--page-x-spacing2] px-6;
+  }
+
+  .checkBox + span {
+    animation: check-bounce 250ms;
+
+    @apply border-[1rem] border-primary;
+  }
+
+  .checkBox + span::before {
+    @apply absolute left-2 top-2 content-[""];
+
+    animation: checked 125ms 250ms forwards;
+    border-bottom: 4px solid transparent;
+    border-right: 4px solid transparent;
+    transform: rotate(45deg);
+    transform-origin: 0% 100%;
+  }
+
+  @keyframes checked {
+    0% {
+      height: 0;
+      transform: translate(0, 0) rotate(45deg);
+      width: 0;
+
+      @apply border-white;
+    }
+
+    33% {
+      height: 0;
+      transform: translate(0, 0) rotate(45deg);
+      width: 8px;
+
+      @apply border-white;
+    }
+
+    100% {
+      height: 16px;
+      transform: translate(0, -8px) rotate(45deg);
+      width: 8px;
+
+      @apply border-white;
+    }
+  }
+
+  @keyframes check-bounce {
+    0% {
+      transform: scale(1);
+    }
+
+    33% {
+      transform: scale(0.7);
+    }
+
+    100% {
+      transform: scale(1);
+    }
   }
 }
