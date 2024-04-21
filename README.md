@@ -30,6 +30,10 @@
   <a title="Commitizen friendly" href="https://commitizen-tools.github.io/commitizen/">
     <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly">
   </a>
+  <img src="https://github.com/rikhall1515/nextjs-project-template/actions/workflows/build.yml/badge.svg" alt="Build and Analysis Checks" />
+  <a title="scorecard" href="https://securityscorecards.dev/viewer/?uri=github.com/rikhall1515/nextjs-project-template">
+    <img src="https://api.securityscorecards.dev/projects/github.com/rikhall1515/nextjs-project-template/badge" alt="nodejs.org scorecard badge" />
+  </a>
   <br />
   <br />
 </p>
