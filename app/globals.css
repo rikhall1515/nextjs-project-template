@@ -179,11 +179,11 @@
 
 @layer utilities {
   .pxPage {
-    @apply m:px-[--page-x-spacing] px-6;
+    @apply px-6 m:px-[--page-x-spacing];
   }
 
   .pxPageTwo {
-    @apply m:px-[--page-x-spacing2] px-6;
+    @apply px-6 m:px-[--page-x-spacing2];
   }
 
   .checkBox + span {

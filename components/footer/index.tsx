@@ -9,7 +9,7 @@ export default function Footer() {
           <span className="mb-6 block text-2xl font-extrabold">
             {env.NEXT_PUBLIC_SITE_NAME}
           </span>
-          <div className="m:flex-row flex w-full flex-col items-start justify-between gap-6">
+          <div className="flex w-full flex-col items-start justify-between gap-6 m:flex-row">
             <div className="!w-[10rem] flex-shrink-0 text-sm text-black">
               @ {year}{" "}
               <a href="/" className="ml-1 hover:underline">
