@@ -17,7 +17,7 @@ const nextConfig = {
   // We don't want to redirect with trailing slashes
   skipTrailingSlashRedirect: true,
   // We allow the BASE_PATH to be overridden in case that the Website
-  // is being built on a subdirectory (e.g. /nodejs-website)
+  // is being built on a subdirectory
   basePath: BASE_PATH,
   images: {
     // We allow SVGs to be used as images
