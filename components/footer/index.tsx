@@ -27,7 +27,7 @@ export default function Footer() {
                 <a href="#">Privacy Settings</a>
               </li>
               <li className="me-4 last:mr-0 md:mr-6">
-                <a href="#">Company Details</a>
+                <a href="#">Terms</a>
               </li>
             </ul>
           </div>
