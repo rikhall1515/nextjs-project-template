@@ -40,11 +40,11 @@
     /* hsl(250 16% 47%) */
     --muted-foreground: 250 16% 47%;
 
-    /* hsl(169 90% 61%) */
-    --accent: 169 90% 61%;
+    /* hsl(274 90% 30%) */
+    --accent: 274 90% 30%;
 
-    /* hsl(274 47% 11%) */
-    --accent-foreground: 274 47% 11%;
+    /* hsl(270 40% 98%) */
+    --accent-foreground: 270 40% 98%;
 
     /* hsl(0 84% 60%) */
     --destructive: 0 84% 60%;
@@ -102,11 +102,11 @@
     /* hsl(250 20% 65%) */
     --muted-foreground: 250 20% 65%;
 
-    /* hsl(169 70% 41%) */
-    --accent: 169 70% 41%;
+    /* hsl(274 70% 80%) */
+    --accent: 274 70% 80%;
 
-    /* hsl(270 40% 98%) */
-    --accent-foreground: 270 40% 98%;
+    /* hsl(274 47% 11%) */
+    --accent-foreground: 274 47% 11%;
 
     /* hsl(0 63% 33%) */
     --destructive: 0 63% 33%;
@@ -125,13 +125,31 @@
   }
 }
 
+.gradientText {
+  background: linear-gradient(
+    to right,
+    #e90c0c,
+    #e5e90c,
+    #6de90c,
+    #0ce9c1,
+    #0c99e9,
+    #0c2fe9,
+    #880ce9,
+    #e90cd3,
+    #e90c0c
+  );
+  background-clip: text;
+  background-size: 300% 300%;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   h1 {
-    @apply text-5xl;
+    @apply text-3xl font-extrabold
+      leading-[2.5rem] tracking-wide lg:text-5xl lg:leading-[3.5rem];
   }
 
   h2 {
@@ -165,6 +183,7 @@
     @apply text-foreground;
   }
 
+  html,
   body {
     @apply bg-background text-foreground;
   }
