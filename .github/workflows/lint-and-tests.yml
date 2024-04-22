@@ -138,7 +138,7 @@ jobs:
         if: steps.eslint-step.outcome == 'success'
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo prettier -- --fix ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
 
       - name: Run `tsc build`
         # We want to ensure that the whole codebase is passing and successfully compiles with TypeScript

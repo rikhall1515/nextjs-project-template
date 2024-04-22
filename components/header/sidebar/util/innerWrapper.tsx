@@ -18,7 +18,7 @@ export default function InnerWrapper({
       <aside
         className={cn(
           "fixed bottom-0 right-0 top-0 z-[29]", //34px 24 - 34 = 10 / 2 = 5
-          "h-[100svh] w-[100vw] transition-all duration-300 md:w-[20rem]",
+          "h-[100svh] w-[100vw] transition-all duration-300 m:w-[20rem]",
           "outline-none",
           "bg-white",
           sidebar.isExpanded
