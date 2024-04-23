@@ -5,8 +5,6 @@ import { useInView } from "react-intersection-observer";
 import { useSidebarContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
-import "@/components/header/header.css";
-
 export default function HeaderWrapper({
   children,
 }: {
@@ -32,9 +30,9 @@ export default function HeaderWrapper({
         className={cn(
           "fixed left-0 right-0 top-0 z-10", //position
           "flex items-center justify-center", //display
-          "h-[8rem] w-full", //size
+          "h-[8rem] w-[100svw]", //size
           "border-b-[1px] border-[transparent] bg-[initial]", //color
-          "transition-all duration-300", //transition
+          "transition-[height,border,background-color] duration-300", //transition
           inView === true || undefined || null ? "" : "scrolled"
         )}
       >

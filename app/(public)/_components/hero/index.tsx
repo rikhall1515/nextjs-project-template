@@ -24,19 +24,11 @@ export default function Hero() {
           </span>
         </Link>
         <div className="z-[5] mb-12 space-y-2">
-          <h1 className="mb-4 text-center text-3xl font-extrabold leading-[2.5rem] tracking-wide m:text-4xl lg:text-5xl lg:leading-[3.5rem]">
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              Stop
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              writing
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              boilerplate
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              code.
-            </span>
+          <h1 className="mb-4 text-center">
+            <span className="special">Stop</span>{" "}
+            <span className="special">writing</span>{" "}
+            <span className="special">boilerplate</span>{" "}
+            <span className="special">code.</span>
           </h1>
           <p className="mx-auto max-w-[700px] text-center text-foreground md:text-xl">
             This is a Next.js project template powered by{" "}
@@ -73,9 +65,9 @@ export default function Hero() {
                 width="722.202"
                 height="805.397"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -95,8 +87,8 @@ export default function Hero() {
                 y2="426.974"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.08" stop-color="#A26EF7" />
-                <stop offset="0.9999" stop-color="#C36EF7" />
+                <stop offset="0.08" stopColor="#A26EF7" />
+                <stop offset="0.9999" stopColor="#C36EF7" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_1276_1297"
@@ -106,8 +98,8 @@ export default function Hero() {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(231.366 440.155) rotate(-52.2302) scale(274.037 134.982)"
               >
-                <stop stop-color="#CB6EF7" />
-                <stop offset="1" stop-color="#1017AF" stopOpacity="0" />
+                <stop stopColor="#CB6EF7" />
+                <stop offset="1" stopColor="#1017AF" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
@@ -137,9 +129,9 @@ export default function Hero() {
                 width="615.026"
                 height="654.127"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -159,9 +151,9 @@ export default function Hero() {
                 y2="479.98"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.08" stop-color="#A26EF7" />
-                <stop offset="0.49" stop-color="#C36EF7" />
-                <stop offset="1" stop-color="#1017AF" />
+                <stop offset="0.08" stopColor="#A26EF7" />
+                <stop offset="0.49" stopColor="#C36EF7" />
+                <stop offset="1" stopColor="#1017AF" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_1276_1295"
@@ -171,22 +163,22 @@ export default function Hero() {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(347.5 456.5) rotate(-140.097) scale(338.274 284.182)"
               >
-                <stop stop-color="#CB6EF7" />
-                <stop offset="1" stop-color="#1017AF" stopOpacity="0" />
+                <stop stopColor="#CB6EF7" />
+                <stop offset="1" stopColor="#1017AF" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
 
           <Button asChild className="transition-all">
             <Link
-              className="inline-flex h-14 items-center justify-center rounded-md px-6 text-lg font-semibold shadow hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
+              className="h-14 rounded-md px-6 text-xl font-semibold text-primary-foreground shadow hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
               href="#"
             >
               Get Started
             </Link>
           </Button>
         </div>
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </Wrapper>
     </>
   );

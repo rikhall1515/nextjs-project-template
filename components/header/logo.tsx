@@ -12,7 +12,7 @@ export default function Logo() {
         href="/"
         className={cn(
           "h-8",
-          "z-30 flex items-center gap-3",
+          "z-30 flex items-center gap-1",
           "text-base font-extrabold tracking-[0.2em]",
           sidebar.isExpanded
             ? "text-foreground m:text-white"

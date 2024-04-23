@@ -1,0 +1,159 @@
+:root,
+html,
+html.light {
+  /* hsl(0 0% 98%) */
+  --background: 0 0% 98%;
+
+  /* hsl(274 84% 5%) */
+  --foreground: 274 84% 5%;
+
+  /* hsl(0 0% 100%) */
+  --card: 0 0% 100%;
+
+  /* hsl(274 84% 5%) */
+  --card-foreground: 274 84% 5%;
+
+  /* hsl(0 0% 100%) */
+  --popover: 0 0% 100%;
+
+  /* hsl(274 84% 5%) */
+  --popover-foreground: 274 84% 5%;
+
+  /* hsl(274 90% 47%) */
+  --primary: 274 90% 47%;
+
+  /* hsl(270 40% 98%) */
+  --primary-foreground: 270 40% 98%;
+
+  /* hsl(238 82% 38%) */
+  --secondary: 238 82% 38%;
+
+  /* hsl(0 0% 98%) */
+  --secondary-foreground: 0 0% 98%;
+
+  /* hsl(270 40% 96%) */
+  --muted: 270 40% 96%;
+
+  /* hsl(250 16% 47%) */
+  --muted-foreground: 250 16% 47%;
+
+  /* hsl(274 90% 30%) */
+  --accent: 274 90% 30%;
+
+  /* hsl(270 40% 98%) */
+  --accent-foreground: 270 40% 98%;
+
+  /* hsl(0 84% 60%) */
+  --destructive: 0 84% 60%;
+
+  /* hsl(270 40% 98%) */
+  --destructive-foreground: 270 40% 98%;
+
+  /* hsl(270 32% 91%) */
+  --border: 270 32% 91%;
+
+  /* hsl(270 32% 91%) */
+  --input: 270 32% 91%;
+
+  /* hsl(274 84% 5%) */
+  --ring: 274 84% 5%;
+  --radius: 0.5rem;
+}
+
+.dark,
+html.dark {
+  /* hsl(274 84% 5%) */
+  --background: 274 84% 5%;
+
+  /* hsl(270 40% 98%) */
+  --foreground: 270 40% 98%;
+
+  /* hsl(274 84% 10%) */
+  --card: 274 84% 10%;
+
+  /* hsl(270 40% 98%) */
+  --card-foreground: 270 40% 98%;
+
+  /* hsl(274 84% 10%) */
+  --popover: 274 84% 10%;
+
+  /* hsl(270 40% 98%) */
+  --popover-foreground: 270 40% 98%;
+
+  /* hsl(274 70% 61%) */
+  --primary: 274 70% 61%;
+
+  /* hsl(274 47% 11%) */
+  --primary-foreground: 274 47% 11%;
+
+  /* hsl(238 72% 58%) */
+  --secondary: 238 72% 58%;
+
+  /* hsl(270 40% 98%) */
+  --secondary-foreground: 270 40% 98%;
+
+  /* hsl(260 33% 18%) */
+  --muted: 260 33% 18%;
+
+  /* hsl(250 20% 65%) */
+  --muted-foreground: 250 20% 65%;
+
+  /* hsl(274 70% 80%) */
+  --accent: 274 70% 80%;
+
+  /* hsl(274 47% 11%) */
+  --accent-foreground: 274 47% 11%;
+
+  /* hsl(0 63% 33%) */
+  --destructive: 0 63% 33%;
+
+  /* hsl(270 40% 98%) */
+  --destructive-foreground: 270 40% 98%;
+
+  /* hsl(260 33% 18%) */
+  --border: 260 33% 18%;
+
+  /* hsl(260 33% 18%) */
+  --input: 260 33% 18%;
+
+  /* hsl(213 27% 84%) */
+  --ring: 270 27% 84%;
+}
+
+:root {
+  --page-x-spacing: 3rem;
+  --page-x-spacing2: 2rem;
+  --header-height: 8rem;
+  --header-height-scrolled: 4.5rem;
+}
+
+@media (width >= 64rem) {
+  :root {
+    --page-x-spacing: 8rem;
+    --page-x-spacing2: 7rem;
+  }
+}
+
+* {
+  @apply subpixel-antialiased;
+  @apply border-border;
+}
+
+html,
+body {
+  @apply size-full
+    bg-background text-foreground
+    [scrollbar-gutter:stable];
+}
+
+body {
+  @apply scroll-smooth;
+}
+
+.pxPage {
+  @apply px-6 m:px-[--page-x-spacing];
+}
+
+.pxPageTwo {
+  @apply px-6 m:px-[--page-x-spacing2];
+}

@@ -20,7 +20,7 @@ export default function InnerWrapper({
           "fixed bottom-0 right-0 top-0 z-[29]", //34px 24 - 34 = 10 / 2 = 5
           "h-[100svh] w-[100vw] transition-all duration-300 m:w-[20rem]",
           "outline-none",
-          "bg-white",
+          "bg-background",
           sidebar.isExpanded
             ? "pointer-events-auto translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0",

@@ -31,7 +31,7 @@ export default function CookieBanner() {
         }}
         buttonStyle={{
           background: "hsl(var(--primary))",
-          color: "white",
+          color: "hsl(var(--primary-foreground))",
           borderRadius: "0.35rem",
         }}
         declineButtonStyle={{

@@ -1,3 +1,4 @@
+import ThemeToggle from "@/components/themeToggle";
 import { env } from "@/env/client";
 
 export default function Footer() {
@@ -9,14 +10,14 @@ export default function Footer() {
           <span className="mb-6 block text-2xl font-extrabold">
             {env.NEXT_PUBLIC_SITE_NAME}
           </span>
-          <div className="flex w-full flex-col items-start justify-between gap-6 m:flex-row">
-            <div className="!w-[10rem] flex-shrink-0 text-sm text-black">
+          <div className="mb-6 flex w-full flex-col items-start justify-between gap-6 m:flex-row">
+            <div className="!w-[10rem] flex-shrink-0 text-sm">
               @ {year}{" "}
               <a href="/" className="ml-1 hover:underline">
                 {env.NEXT_PUBLIC_SITE_NAME}
               </a>
             </div>
-            <ul className="flex flex-wrap text-sm text-black">
+            <ul className="flex flex-wrap text-sm">
               <li className="me-4 last:mr-0 md:mr-6">
                 <a href="/privacy">Privacy Policy</a>
               </li>
@@ -31,6 +32,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          <ThemeToggle />
         </div>
       </footer>
     </>

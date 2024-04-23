@@ -7,7 +7,7 @@ import { MenuButton } from "./util/menuButton";
 export default function Sidebar() {
   return (
     <>
-      <div className="-mr-6 block h-[4.5rem] fill-[inherit] lg:hidden">
+      <div className="-mr-6 block h-[4.5rem] lg:hidden">
         <MenuButton />
         <BackDrop />
         {/* <SwipeArea /> */}
