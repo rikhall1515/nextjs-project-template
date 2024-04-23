@@ -1,0 +1,16 @@
+.gradientText {
+  background: linear-gradient(
+    to right,
+    #e90c0c,
+    #e5e90c,
+    #6de90c,
+    #0ce9c1,
+    #0c99e9,
+    #0c2fe9,
+    #880ce9,
+    #e90cd3,
+    #e90c0c
+  );
+  background-clip: text;
+  background-size: 300% 300%;
+}
