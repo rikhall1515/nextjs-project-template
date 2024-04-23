@@ -25,18 +25,10 @@ export default function Hero() {
         </Link>
         <div className="z-[5] mb-12 space-y-2">
           <h1 className="mb-4 text-center">
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              Stop
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              writing
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              boilerplate
-            </span>{" "}
-            <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
-              code.
-            </span>
+            <span className="special">Stop</span>{" "}
+            <span className="special">writing</span>{" "}
+            <span className="special">boilerplate</span>{" "}
+            <span className="special">code.</span>
           </h1>
           <p className="mx-auto max-w-[700px] text-center text-foreground md:text-xl">
             This is a Next.js project template powered by{" "}
@@ -179,7 +171,7 @@ export default function Hero() {
 
           <Button asChild className="transition-all">
             <Link
-              className="inline-flex h-14 items-center justify-center rounded-md px-6 text-lg font-semibold shadow hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
+              className="h-14 rounded-md px-6 text-xl font-semibold text-primary-foreground shadow hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
               href="#"
             >
               Get Started
