@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  :root,
+  html,
+  html.light {
     /* hsl(0 0% 98%) */
     --background: 0 0% 98%;
 
@@ -61,11 +63,15 @@
     /* hsl(274 84% 5%) */
     --ring: 274 84% 5%;
     --radius: 0.5rem;
+  }
+
+  :root {
     --page-x-spacing: 3rem;
     --page-x-spacing2: 2rem;
   }
 
-  .dark {
+  .dark,
+  html.dark {
     /* hsl(274 84% 5%) */
     --background: 274 84% 5%;
 
