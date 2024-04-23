@@ -24,7 +24,7 @@ export default function Hero() {
           </span>
         </Link>
         <div className="z-[5] mb-12 space-y-2">
-          <h1 className="mb-4 text-center text-3xl font-extrabold leading-[2.5rem] tracking-wide m:text-4xl lg:text-5xl lg:leading-[3.5rem]">
+          <h1 className="mb-4 text-center">
             <span className="bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent">
               Stop
             </span>{" "}

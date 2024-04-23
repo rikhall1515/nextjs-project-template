@@ -56,7 +56,7 @@ export default function SidebarItem({
         <span
           aria-hidden="true"
           className={cn(
-            "absolute left-0 h-full w-1 rounded-r-2xl bg-black transition-all",
+            "absolute left-0 h-full w-1 rounded-r-2xl bg-foreground transition-all",
             pathname === href ? "opacity-100" : "opacity-0",
             "group-hover/sidebarItem:opacity-100"
           )}
