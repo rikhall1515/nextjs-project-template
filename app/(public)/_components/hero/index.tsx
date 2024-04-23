@@ -73,9 +73,9 @@ export default function Hero() {
                 width="722.202"
                 height="805.397"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -95,8 +95,8 @@ export default function Hero() {
                 y2="426.974"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.08" stop-color="#A26EF7" />
-                <stop offset="0.9999" stop-color="#C36EF7" />
+                <stop offset="0.08" stopColor="#A26EF7" />
+                <stop offset="0.9999" stopColor="#C36EF7" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_1276_1297"
@@ -106,8 +106,8 @@ export default function Hero() {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(231.366 440.155) rotate(-52.2302) scale(274.037 134.982)"
               >
-                <stop stop-color="#CB6EF7" />
-                <stop offset="1" stop-color="#1017AF" stopOpacity="0" />
+                <stop stopColor="#CB6EF7" />
+                <stop offset="1" stopColor="#1017AF" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
@@ -137,9 +137,9 @@ export default function Hero() {
                 width="615.026"
                 height="654.127"
                 filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
+                colorInterpolationFilters="sRGB"
               >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feFlood floodOpacity="0" result="BackgroundImageFix" />
                 <feBlend
                   mode="normal"
                   in="SourceGraphic"
@@ -159,9 +159,9 @@ export default function Hero() {
                 y2="479.98"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop offset="0.08" stop-color="#A26EF7" />
-                <stop offset="0.49" stop-color="#C36EF7" />
-                <stop offset="1" stop-color="#1017AF" />
+                <stop offset="0.08" stopColor="#A26EF7" />
+                <stop offset="0.49" stopColor="#C36EF7" />
+                <stop offset="1" stopColor="#1017AF" />
               </linearGradient>
               <radialGradient
                 id="paint1_radial_1276_1295"
@@ -171,8 +171,8 @@ export default function Hero() {
                 gradientUnits="userSpaceOnUse"
                 gradientTransform="translate(347.5 456.5) rotate(-140.097) scale(338.274 284.182)"
               >
-                <stop stop-color="#CB6EF7" />
-                <stop offset="1" stop-color="#1017AF" stopOpacity="0" />
+                <stop stopColor="#CB6EF7" />
+                <stop offset="1" stopColor="#1017AF" stopOpacity="0" />
               </radialGradient>
             </defs>
           </svg>
@@ -186,7 +186,7 @@ export default function Hero() {
             </Link>
           </Button>
         </div>
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black"></div>
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       </Wrapper>
     </>
   );
