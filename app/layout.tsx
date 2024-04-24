@@ -1,13 +1,12 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 
 import "@/styles/index.css";
 import Providers from "@/context";
 import { env } from "@/env/client";
 import { VERCEL_ENV } from "@/next.constants.mjs";
-const inter = Inter({ subsets: ["latin"] });
+import { PLUS_JAKARTA_SANS, ATKINSON_HYPERLEGIBLE } from "@/next.fonts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_BASE_URL),
@@ -43,7 +42,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body
+        className={`${PLUS_JAKARTA_SANS.variable} ${ATKINSON_HYPERLEGIBLE.variable}`}
+      >
         <Providers>{children}</Providers>
         {VERCEL_ENV && (
           <>

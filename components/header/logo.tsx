@@ -13,7 +13,7 @@ export default function Logo() {
         className={cn(
           "h-8",
           "z-30 flex items-center gap-1",
-          "text-base font-extrabold tracking-[0.2em]",
+          "text-base font-bold tracking-[0.2em]",
           sidebar.isExpanded
             ? "text-foreground m:text-white"
             : "text-foreground"
@@ -21,7 +21,7 @@ export default function Logo() {
       >
         <BaseLogo />
         <span className="text-3xl">/</span>
-        <span>{env.NEXT_PUBLIC_SITE_NAME}</span>
+        <span className="-mb-2">{env.NEXT_PUBLIC_SITE_NAME}</span>
       </a>
     </>
   );
