@@ -87,10 +87,6 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@commitlint/cli": "19.2.1",
-    "@commitlint/config-conventional": "19.1.0",
-    "@commitlint/cz-commitlint": "19.2.0",
-    "@commitlint/types": "19.0.3",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@storybook/addon-controls": "~8.0.8",
@@ -123,33 +119,5 @@
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.0",
     "turbo": "1.13.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "@commitlint/cz-commitlint"
-    }
-  },
-  "release": {
-    "branches": [
-      "main"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/commit-analyzer",
-        {
-          "preset": "conventionalcommits"
-        }
-      ],
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": false
-        }
-      ],
-      "@semantic-release/git",
-      "@semantic-release/github"
-    ]
   }
 }

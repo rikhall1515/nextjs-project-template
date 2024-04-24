@@ -12,7 +12,7 @@ export default function Hero() {
         <Link
           className={cn(
             "relative inline-flex overflow-hidden rounded-full",
-            "focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50",
+            "focus:ring-slate-400 focus:ring-offset-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2",
             "mb-6 h-12 p-[1px] transition-all hover:scale-110 focus:outline-none"
           )}
           href="https://github.com/rikhall1515/nextjs-project-template/tree/main"
@@ -169,13 +169,11 @@ export default function Hero() {
             </defs>
           </svg>
 
-          <Button asChild className="transition-all">
-            <Link
-              className="h-14 rounded-md px-6 text-xl font-semibold text-primary-foreground shadow hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
-              href="#"
-            >
-              Get Started
-            </Link>
+          <Button
+            asChild
+            className="h-14 rounded-md px-6 text-xl font-bold text-primary-foreground shadow transition-all hover:scale-110 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary disabled:pointer-events-none"
+          >
+            <Link href="#">Get Started</Link>
           </Button>
         </div>
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
