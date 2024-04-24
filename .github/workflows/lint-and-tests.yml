@@ -125,7 +125,6 @@ jobs:
         run: CI=true pnpm i --ignore-scripts
 
       - name: Run `turbo lint`
-        id: eslint-step
         # We run the ESLint and Prettier commands on all Workflow triggers of the `Lint` job
         # Note: Linting and Prettifying of files on Crowdin PRs is handled by the `translations-pr.yml` Workflow
         if: |
@@ -133,12 +132,7 @@ jobs:
           (github.event_name == 'pull_request_target')
         # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
         # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo lint ${{ needs.base.outputs.turbo_args }}
-      - name: Run `turbo prettier`
-        if: steps.eslint-step.outcome == 'success'
-        # We want to enforce that the actual `turbo@latest` package is used instead of a possible hijack from the user
-        # the `${{ needs.base.outputs.turbo_args }}` is a string substitution happening from the base job
-        run: npx --package=turbo@latest -- turbo prettier ${{ needs.base.outputs.turbo_args }}
+        run: npx --package=turbo@latest -- turbo lint:js lint:css prettier ${{ needs.base.outputs.turbo_args}}
 
       - name: Run `tsc build`
         # We want to ensure that the whole codebase is passing and successfully compiles with TypeScript

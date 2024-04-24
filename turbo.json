@@ -49,32 +49,29 @@
       ]
     },
     "lint:js": {
-      "cache": false,
+      "inputs": [
+        "{app,components,hooks,actions,db,env,layouts,middlewares,context,types,lib}/**/*.{ts,tsx,mjs}",
+        "{next-data,scripts,i18n}/**/*.{mjs,json}",
+        "{.storybook,public}/**/*.{ts,js,json}",
+        "*.{json,ts,tsx}"
+      ],
       "outputs": [".eslintjscache"]
     },
     "lint:css": {
-      "cache": false,
+      "inputs": ["{app,components,layouts,styles}/**/*.css"],
       "outputs": [".stylelintcache"]
     },
-    "lint": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".stylelintcache"]
-    },
     "lint:fix": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".stylelintcache"]
+      "cache": false
     },
     "prettier": {
-      "cache": false,
       "outputs": [".prettiercache"]
     },
     "prettier:fix": {
-      "cache": false,
-      "outputs": [".prettiercache"]
+      "cache": false
     },
     "format": {
-      "cache": false,
-      "outputs": [".eslintjscache", ".stylelintcache", ".prettiercache"]
+      "cache": false
     },
     "storybook": {
       "cache": false,
@@ -91,15 +88,6 @@
       "outputs": ["storybook-static/**"]
     },
     "test:unit": {
-      "inputs": [
-        "{app,components,hooks,lib,context,types}/**/*.{ts,tsx,mjs}",
-        "{app,components,styles}/**/*.css",
-        "{next-data,scripts,i18n}/**/*.{mjs,json}",
-        "*.{md,mdx,json,ts,tsx,mjs,yml}"
-      ],
-      "outputs": ["coverage/**", "junit.xml"]
-    },
-    "test": {
       "inputs": [
         "{app,components,hooks,lib,context,types}/**/*.{ts,tsx,mjs}",
         "{app,components,styles}/**/*.css",
