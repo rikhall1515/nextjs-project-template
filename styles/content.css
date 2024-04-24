@@ -2,7 +2,7 @@ main {
   hr {
     @apply w-full
       border-t
-      border-border 
+      border-border
       bg-background;
   }
 
@@ -13,11 +13,11 @@ main {
   h5,
   h6,
   strong {
-    @apply font-semibold text-foreground;
+    @apply font-plusjakarta font-semibold text-foreground;
   }
 
   h1 {
-    @apply text-3xl font-extrabold
+    @apply text-3xl font-bold
           leading-[2.5rem] tracking-wide
           lg:text-5xl lg:leading-[3.5rem];
   }
@@ -39,5 +39,9 @@ main {
   h5,
   h6 {
     @apply text-xl;
+  }
+
+  p {
+    @apply font-atkinson;
   }
 }

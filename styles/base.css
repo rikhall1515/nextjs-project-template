@@ -46,8 +46,8 @@ html.light {
   /* hsl(0 84% 60%) */
   --destructive: 0 84% 60%;
 
-  /* hsl(270 40% 98%) */
-  --destructive-foreground: 270 40% 98%;
+  /* hsl(274 84% 5%) */
+  --destructive-foreground: 274 84% 5%;
 
   /* hsl(270 32% 91%) */
   --border: 270 32% 91%;

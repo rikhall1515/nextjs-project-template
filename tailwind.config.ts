@@ -25,13 +25,39 @@ import { default as flattenColorPalette } from "tailwindcss/lib/util/flattenColo
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{tsx,mdx}",
+    "./components/**/*.tsx",
+    "./context/**/*.tsx",
+    "./layouts/**/*.tsx",
+    "./.storybook/preview.tsx",
+    "./.storybook/main.ts",
+    "./app/**/*.tsx",
   ],
   prefix: "",
   theme: {
+    fontSize: {
+      xs: ["0.75rem", "1rem"],
+      sm: ["0.875rem", "1.25rem"],
+      base: ["1rem", "1.5rem"],
+      lg: ["1.125rem", "1.75rem"],
+      xl: ["1.25rem", "1.875rem"],
+      "2xl": ["1.5rem", "2rem"],
+      "3xl": ["1.875rem", "2.25rem"],
+      "4xl": ["2.25rem", "2.5rem"],
+      "5xl": ["3rem", "3rem"],
+      "6xl": ["3.75rem", "3.75rem"],
+      "7xl": ["4.5rem", "4.5rem"],
+    },
+    fontWeight: {
+      regular: "400",
+      medium: "500",
+      semibold: "600",
+      bold: "700",
+    },
+    fontFamily: {
+      plusjakarta: ["var(--font-jakarta)"],
+      atkinson: ["var(--font-atkinson)"],
+    },
     container: {
       center: true,
       padding: "2rem",
@@ -39,44 +65,108 @@ const config = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      xs: "320px",
+      // => @media (min-width: 320px) { ... }
+
+      m: "420px",
+      // => @media (min-width: 420px) { ... }
+
+      sm: "640px",
+      // => @media (min-width: 640px) { ... }
+
+      md: "768px",
+      // => @media (min-width: 768px) { ... }
+
+      lg: "1024px",
+      // => @media (min-width: 1024px) { ... }
+
+      xl: "1280px",
+      // => @media (min-width: 1280px) { ... }
+
+      "2xl": "1536px",
+      // => @media (min-width: 1536px) { ... }
+    },
+    colors: {
+      /* light: hsl(0 0% 98%) */
+      /* dark: hsl(274 84% 5%) */
+      background: "hsl(var(--background))",
+      /* light: hsl(274 84% 5%) */
+      /* dark: hsl(270 40% 98%) */
+      foreground: "hsl(var(--foreground))",
+      card: {
+        /* light: hsl(0 0% 100%) */
+        /* dark: hsl(274 84% 10%) */
+        DEFAULT: "hsl(var(--card))",
+        /* light: hsl(274 84% 5%) */
+        /* dark: hsl(270 40% 98%) */
+        foreground: "hsl(var(--card-foreground))",
+      },
+      popover: {
+        /* light: hsl(0 0% 100%) */
+        /* dark: hsl(274 84% 10%) */
+        DEFAULT: "hsl(var(--popover))",
+        /* light: hsl(274 84% 5%) */
+        /* dark: hsl(270 40% 98%) */
+        foreground: "hsl(var(--popover-foreground))",
+      },
+      primary: {
+        /* light: hsl(274 90% 47%) */
+        /* dark: hsl(274 70% 61%) */
+        DEFAULT: "hsl(var(--primary))",
+        /* light: hsl(270 40% 98%) */
+        /* dark: hsl(274 47% 11%) */
+        foreground: "hsl(var(--primary-foreground))",
+      },
+      secondary: {
+        /* light: hsl(238 82% 38%) */
+        /* dark: hsl(238 72% 58%) */
+        DEFAULT: "hsl(var(--secondary))",
+        /* light: hsl(0 0% 98%) */
+        /* dark: hsl(270 40% 98%) */
+        foreground: "hsl(var(--secondary-foreground))",
+      },
+      muted: {
+        /* light: hsl(270 40% 96%) */
+        /* dark: hsl(260 33% 18%) */
+        DEFAULT: "hsl(var(--muted))",
+        /* light: hsl(250 16% 47%) */
+        /* dark: hsl(250 20% 65%) */
+        foreground: "hsl(var(--muted-foreground))",
+      },
+      accent: {
+        /* light: hsl(274 90% 30%) */
+        /* dark: hsl(274 70% 80%) */
+        DEFAULT: "hsl(var(--accent))",
+        /* light: hsl(270 40% 98%) */
+        /* dark: hsl(274 47% 11%) */
+        foreground: "hsl(var(--accent-foreground))",
+      },
+      destructive: {
+        /* light: hsl(0 84% 60%) */
+        /* dark: hsl(0 63% 33%) */
+        DEFAULT: "hsl(var(--destructive))",
+        /* light: hsl(274 84% 5%) */
+        /* dark: hsl(270 40% 98%) */
+        foreground: "hsl(var(--destructive-foreground))",
+      },
+      /* light: hsl(270 32% 91%) */
+      /* dark: hsl(260 33% 18%) */
+      border: "hsl(var(--border))",
+      /* light: hsl(270 32% 91%) */
+      /* dark: hsl(260 33% 18%) */
+      input: "hsl(var(--input))",
+      /* light: hsl(274 84% 5%) */
+      /* dark: hsl(213 27% 84%) */
+      ring: "hsl(var(--ring))",
+      white: "#FFFFFF",
+      black: "#2E2E2E",
+      transparent: "transparent",
+      shadow: "#101828",
+    },
     extend: {
       screens: {
         m: "420px",
-      },
-      colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
