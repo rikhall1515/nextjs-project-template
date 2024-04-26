@@ -13,6 +13,7 @@ export default function Logo({
         height={length}
         fill="none"
         className={className}
+        viewBox="0 0 32 32"
       >
         <path
           fill="currentColor"

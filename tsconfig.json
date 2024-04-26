@@ -30,7 +30,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "lib/lighthouse/__tests__/index.test.mjs",
-    "lib/lighthouse/index.mjs"
+    "lib/lighthouse/index.mjs",
+    "app/(public)/[...not-found]"
   ],
   "exclude": ["node_modules", ".next"]
 }

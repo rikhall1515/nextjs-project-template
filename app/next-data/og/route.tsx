@@ -3,6 +3,7 @@ import { ImageResponse } from "next/og";
 // import HexagonGrid from "@/components/Icons/HexagonGrid";
 // import JsIconWhite from "@/components/Icons/Logos/JsIconWhite";
 
+import Logo from "@/components/logo";
 import { VERCEL_ENV, VERCEL_REVALIDATE } from "@/next.constants.mjs";
 
 // This is the Route Handler for the `GET` method which handles the request
@@ -20,19 +21,7 @@ export const GET = async (request: Request) => {
     (
       <div tw="relative flex items-center justify-center bg-black w-[1200px] h-[600px]">
         <div tw="absolute mx-auto flex max-w-xl flex-col text-center items-center text-3xl font-semibold text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="128"
-            height="128"
-            fill="none"
-          >
-            <path
-              fill="currentColor"
-              fillRule="evenodd"
-              d="M0 0h14c2.122 0 4.157 1.054 5.657 2.929C21.157 4.804 22 7.348 22 10s-.843 5.196-2.343 7.071S16.122 20 14 20l2.667 4h4.668L19 19.997c1.227-.914 2.402-2.063 3.477-4.286L32 31.999h-6L23.668 28h-4.335L22 32h-6L8 20H6v12H0V0Zm12 14a4 4 0 0 0 0-8H6v8h6Z"
-              clipRule="evenodd"
-            />
-          </svg>
+          <Logo length={128} />
           <h1 tw="font-bold" style={{ fontWeight: 700 }}>
             {title}
           </h1>
