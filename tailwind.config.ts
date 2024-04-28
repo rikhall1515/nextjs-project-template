@@ -142,12 +142,28 @@ const config = {
         /* dark: hsl(274 47% 11%) */
         foreground: "hsl(var(--accent-foreground))",
       },
+      successful: {
+        /* light: hsl(101 90% 40%) */
+        /* dark: hsl(101 70% 60%) */
+        DEFAULT: "hsl(var(--successful))",
+        /* light: hsl(0 0% 98%) */
+        /* dark: hsl(274 47% 11%) */
+        foreground: "hsl(var(--successful-foreground))",
+      },
+      pending: {
+        /* light: hsl(25 90% 40%) */
+        /* dark: hsl(25 70% 60%) */
+        DEFAULT: "hsl(var(--pending))",
+        /* light: hsl(0 0% 98%) */
+        /* dark: hsl(274 47% 11%) */
+        foreground: "hsl(var(--pending-foreground))",
+      },
       destructive: {
-        /* light: hsl(0 84% 60%) */
-        /* dark: hsl(0 63% 33%) */
+        /* light: hsl(0 90% 40%) */
+        /* dark: hsl(0 70% 60%) */
         DEFAULT: "hsl(var(--destructive))",
-        /* light: hsl(274 84% 5%) */
-        /* dark: hsl(270 40% 98%) */
+        /* light: hsl(0 0% 98%) */
+        /* dark: hsl(274 47% 11%) */
         foreground: "hsl(var(--destructive-foreground))",
       },
       /* light: hsl(270 32% 91%) */

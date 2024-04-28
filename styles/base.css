@@ -43,11 +43,23 @@ html.light {
   /* hsl(270 40% 98%) */
   --accent-foreground: 270 40% 98%;
 
-  /* hsl(0 84% 60%) */
+  /* hsl(101 90% 40%) */
+  --successful: 101 90% 40%;
+
+  /* hsl(0 0% 98%) */
+  --successful-foreground: 0 0% 98%;
+
+  /* hsl(25 90% 40%) */
+  --pending: 25 70% 60%;
+
+  /* hsl(0 0% 98%) */
+  --pending-foreground: 0 0% 98%;
+
+  /* hsl(0 90% 40%) */
   --destructive: 0 84% 60%;
 
-  /* hsl(274 84% 5%) */
-  --destructive-foreground: 274 84% 5%;
+  /* hsl(0 0% 98%) */
+  --destructive-foreground: 0 0% 98%;
 
   /* hsl(270 32% 91%) */
   --border: 270 32% 91%;
@@ -104,11 +116,23 @@ html.dark {
   /* hsl(274 47% 11%) */
   --accent-foreground: 274 47% 11%;
 
-  /* hsl(0 63% 33%) */
-  --destructive: 0 63% 33%;
+  /* hsl(101 70% 60%) */
+  --successful: 101 70% 60%;
 
-  /* hsl(270 40% 98%) */
-  --destructive-foreground: 270 40% 98%;
+  /* hsl(274 47% 11%) */
+  --successful-foreground: 274 47% 11%;
+
+  /* hsl(25 70% 60%) */
+  --pending: 25 70% 60%;
+
+  /* hsl(274 47% 11%) */
+  --pending-foreground: 274 47% 11%;
+
+  /* hsl(0 70% 60%) */
+  --destructive: 0 70% 60%;
+
+  /* hsl(274 47% 11%) */
+  --destructive-foreground: 274 47% 11%;
 
   /* hsl(260 33% 18%) */
   --border: 260 33% 18%;
