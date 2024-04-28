@@ -17,7 +17,6 @@ type SidebarStore = {
   setIsAtTop: Dispatch<SetStateAction<boolean>>;
   toggle: () => void;
   mainMenuBtnRef: RefObject<HTMLButtonElement>;
-  btnInSidebarRef: RefObject<HTMLButtonElement>;
   sidebarRef: RefObject<HTMLElement>;
 };
 
@@ -44,7 +43,6 @@ export default function SidebarContextProvider({
   const [isExpanded, setIsExpanded] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
   const mainMenuBtnRef = useRef<HTMLButtonElement>(null);
-  const btnInSidebarRef = useRef<HTMLButtonElement>(null);
   const sidebarRef = useRef<HTMLElement>(null);
   const toggle = () => {
     setIsExpanded(!isExpanded);
@@ -66,7 +64,6 @@ export default function SidebarContextProvider({
           setIsAtTop,
           toggle,
           mainMenuBtnRef,
-          btnInSidebarRef,
           sidebarRef,
         }}
       >
