@@ -1,3 +1,5 @@
+"use client";
+import { useDashboardContext } from "@/context/dashboard";
 import { cn } from "@/lib/utils";
 
 export default function SidebarWrapper({
@@ -5,17 +7,17 @@ export default function SidebarWrapper({
 }: {
   children: React.ReactNode;
 }) {
+  const dashboardCtx = useDashboardContext();
   return (
     <aside
       className={cn(
         "peer/sidebar transition-all",
-        "fixed z-[11] box-border hidden h-[100svh] w-[13.75rem] flex-col bg-card md:flex",
-        "shadow"
+        "fixed z-[11] box-border hidden h-[100svh] flex-col bg-card md:flex",
+        "shadow",
+        dashboardCtx.isExpanded ? "w-[13.75rem]" : "w-16"
       )}
     >
-      <nav className="mt-12 box-border flex h-full w-full flex-col justify-between align-baseline">
-        {children}
-      </nav>
+      {children}
     </aside>
   );
 }
