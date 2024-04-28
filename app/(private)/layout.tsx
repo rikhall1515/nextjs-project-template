@@ -1,7 +1,5 @@
-import CookieBanner from "@/components/cookies";
 import { TooltipProvider } from "@/components/ui/tooltip";
-
-import { Dashboard } from "./_components/sidebar";
+import DashboardContextProvider from "@/context/dashboard";
 
 export default function PrivateLayout({
   children,
@@ -11,14 +9,7 @@ export default function PrivateLayout({
   return (
     <>
       <TooltipProvider>
-        <Dashboard />
-        <main
-          id="content"
-          className="min-h-[100svh] w-full bg-background p-12 pt-[10rem] transition-all md:pl-[16.75rem] md:pt-12"
-        >
-          {children}
-        </main>
-        <CookieBanner />
+        <DashboardContextProvider>{children}</DashboardContextProvider>
       </TooltipProvider>
     </>
   );
