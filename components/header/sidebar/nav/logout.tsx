@@ -9,8 +9,8 @@ export default function LogOut() {
   const [isLoggedIn] = useState(false);
   const sidebar = useSidebarContext();
   const trapFocus: KeyboardEventHandler<HTMLAnchorElement> = (e) => {
-    if (e.code === "Tab" && sidebar.btnInSidebarRef.current) {
-      sidebar.isExpanded && sidebar.btnInSidebarRef.current.focus();
+    if (e.code === "Tab" && sidebar.mainMenuBtnRef.current) {
+      sidebar.isExpanded && sidebar.mainMenuBtnRef.current.focus();
     }
   };
   return (
