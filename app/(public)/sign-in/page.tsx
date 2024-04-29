@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 import EmailInput from "@/components/forms/email";
 import RePasswordInput from "@/components/forms/rePassword";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/db/server";
+//import { createClient } from "@/db/server";
 import { env } from "@/env/client";
 
 import Wrapper from "./wrapper";
@@ -66,24 +66,24 @@ export const metadata: Metadata = {
   },
 };
 export default function SignIn() {
-  const signIn = async (formData: FormData) => {
-    "use server";
+  // const signIn = async (formData: FormData) => {
+  //   "use server";
 
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const supabase = createClient();
+  //   const email = formData.get("email") as string;
+  //   const password = formData.get("password") as string;
+  //   const supabase = createClient();
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  //   const { error } = await supabase.auth.signInWithPassword({
+  //     email,
+  //     password,
+  //   });
 
-    if (error) {
-      return redirect("/sign-in?message=Could not authenticate user");
-    }
+  //   if (error) {
+  //     return redirect("/sign-in?message=Could not authenticate user");
+  //   }
 
-    return redirect("/dashboard");
-  };
+  //   return redirect("/dashboard");
+  // };
 
   return (
     <Wrapper>
@@ -91,7 +91,7 @@ export default function SignIn() {
       <p className="text-balance text-center text-muted-foreground">
         Enter your email below to login to your account
       </p>
-      <form action={signIn} className="grid gap-4">
+      <form className="grid gap-4">
         <EmailInput />
         <RePasswordInput />
         <Button
