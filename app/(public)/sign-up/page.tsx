@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
+//import { headers } from "next/headers";
 import Link from "next/link";
-import { redirect } from "next/navigation";
+//import { redirect } from "next/navigation";
 
 import EmailInput from "@/components/forms/email";
 import PasswordInput from "@/components/forms/password";
 import RePasswordInput from "@/components/forms/rePassword";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@/db/server";
+//import { createClient } from "@/db/server";
 import { env } from "@/env/client";
 
 import Wrapper from "./wrapper";
@@ -69,35 +69,35 @@ export const metadata: Metadata = {
 };
 
 export default function Component() {
-  const signUp = async (formData: FormData) => {
-    "use server";
+  // const signUp = async (formData: FormData) => {
+  //   "use server";
 
-    const origin = headers().get("origin");
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    const supabase = createClient();
+  //   const origin = headers().get("origin");
+  //   const email = formData.get("email") as string;
+  //   const password = formData.get("password") as string;
+  //   const supabase = createClient();
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: `${origin}/auth/callback`,
-      },
-    });
+  //   const { error } = await supabase.auth.signUp({
+  //     email,
+  //     password,
+  //     options: {
+  //       emailRedirectTo: `${origin}/auth/callback`,
+  //     },
+  //   });
 
-    if (error) {
-      return redirect("/sign-up?message=Could not authenticate user");
-    }
+  //   if (error) {
+  //     return redirect("/sign-up?message=Could not authenticate user");
+  //   }
 
-    return redirect("/sign-in?message=Check email to continue sign in process");
-  };
+  //   return redirect("/sign-in?message=Check email to continue sign in process");
+  // };
   return (
     <Wrapper>
       <h1 className="w-full text-center text-3xl font-bold">Sign up</h1>
       <p className="w-full text-balance text-center text-muted-foreground">
         Enter your email below to create an account
       </p>
-      <form action={signUp} className="grid w-full gap-4">
+      <form className="grid w-full gap-4">
         <EmailInput />
         <PasswordInput />
         <RePasswordInput />
