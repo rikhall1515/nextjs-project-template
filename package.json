@@ -68,7 +68,7 @@
     "lint-staged": "15.2.2",
     "lucide-react": "^0.368.0",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "14.2.1",
+    "next": "14.2.3",
     "next-themes": "~0.3.0",
     "postcss": "~8.4.38",
     "postcss-calc": "~10.0.0",
@@ -118,6 +118,6 @@
     "stylelint-config-standard": "36.0.0",
     "stylelint-order": "6.0.4",
     "stylelint-selector-bem-pattern": "4.0.0",
-    "turbo": "1.13.2"
+    "turbo": "1.13.3"
   }
 }
