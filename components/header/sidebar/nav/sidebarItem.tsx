@@ -47,11 +47,7 @@ export default function SidebarItem({
         )}
         {...attr}
       >
-        <div
-          className={cn("ml-[2.125rem] w-6 fill-[inherit] stroke-[inherit]")}
-        >
-          {children}
-        </div>
+        <div className={cn("ml-[2.125rem] w-6 fill-[inherit] stroke-[inherit]")}>{children}</div>
         <span>{text}</span>
         <span
           aria-hidden="true"

@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 
 import Expandable from "./expandable";
 
-export default function FormError({
-  name,
-  error,
-}: {
-  name: string;
-  error?: string;
-}) {
+export default function FormError({ name, error }: { name: string; error?: string }) {
   const [frozenError, setError] = useState<string>();
   useEffect(() => {
     if (!error) {

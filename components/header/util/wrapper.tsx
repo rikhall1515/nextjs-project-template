@@ -5,11 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useSidebarContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
-export default function HeaderWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function HeaderWrapper({ children }: { children: React.ReactNode }) {
   const { setIsAtTop } = useSidebarContext();
   const { ref, inView } = useInView({
     threshold: 0,
@@ -22,10 +18,7 @@ export default function HeaderWrapper({
   }, [inView, setIsAtTop]);
   return (
     <>
-      <div
-        ref={ref}
-        className="absolute left-0 right-0 top-0 h-[1px] w-full"
-      ></div>
+      <div ref={ref} className="absolute left-0 right-0 top-0 h-[1px] w-full"></div>
       <header
         className={cn(
           "fixed left-0 right-0 top-0 z-10", //position

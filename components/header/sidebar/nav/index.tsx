@@ -7,10 +7,7 @@ import SidebarItem from "./sidebarItem";
 export default function Nav() {
   return (
     <>
-      <nav
-        aria-label="In-page jump links"
-        className="flex h-auto w-full flex-col font-bold"
-      >
+      <nav aria-label="In-page jump links" className="flex h-auto w-full flex-col font-bold">
         {/* <LoginDashboard /> */}
         <ul className="w-full">
           <li className="w-full border-t-2 border-border">

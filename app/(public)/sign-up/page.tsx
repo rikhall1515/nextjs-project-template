@@ -108,10 +108,7 @@ export default function Component() {
         >
           Sign up
         </Button>
-        <Button
-          className="h-12 w-full text-xl font-bold text-foreground"
-          variant="outline"
-        >
+        <Button className="h-12 w-full text-xl font-bold text-foreground" variant="outline">
           Sign up with Google
         </Button>
       </form>

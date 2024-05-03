@@ -2,11 +2,7 @@
 import { useDashboardContext } from "@/context/dashboard";
 import { cn } from "@/lib/utils";
 
-export default function SidebarWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SidebarWrapper({ children }: { children: React.ReactNode }) {
   const dashboardCtx = useDashboardContext();
   return (
     <aside

@@ -42,9 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${PLUS_JAKARTA_SANS.variable} ${ATKINSON_HYPERLEGIBLE.variable}`}
-      >
+      <body className={`${PLUS_JAKARTA_SANS.variable} ${ATKINSON_HYPERLEGIBLE.variable}`}>
         <Providers>{children}</Providers>
         {VERCEL_ENV && (
           <>

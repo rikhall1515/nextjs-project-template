@@ -10,13 +10,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
           "relative overflow-x-hidden overflow-y-visible"
         )}
       >
-        <div
-          className={cn(
-            "min-h-[40rem] max-w-[30rem] px-6",
-            "mx-auto",
-            "grid gap-6 py-[7rem]"
-          )}
-        >
+        <div className={cn("min-h-[40rem] max-w-[30rem] px-6", "mx-auto", "grid gap-6 py-[7rem]")}>
           {children}
         </div>
       </section>

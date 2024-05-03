@@ -14,9 +14,7 @@ export const GET = async (request: Request) => {
 
   // ?title=<title>
   const hasTitle = searchParams.has("title");
-  const title = hasTitle
-    ? searchParams.get("title")?.slice(0, 100)
-    : "Next.js Project Template";
+  const title = hasTitle ? searchParams.get("title")?.slice(0, 100) : "Next.js Project Template";
   return new ImageResponse(
     (
       <div tw="relative flex items-center justify-center bg-black w-[1200px] h-[600px]">
