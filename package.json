@@ -78,7 +78,6 @@
     "postcss-mixins": "~10.0.0",
     "postcss-simple-vars": "~7.0.1",
     "react": "^18",
-    "react-cookie-consent": "^9.0.0",
     "react-dom": "^18",
     "react-hook-form": "7.51.3",
     "react-icons": "^5.0.1",
