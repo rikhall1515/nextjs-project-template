@@ -25,10 +25,8 @@ export default function Hero() {
         </Link>
         <div className="z-[5] mb-12 space-y-2">
           <h1 className="mb-4 text-center">
-            <span className="special">Stop</span>{" "}
-            <span className="special">writing</span>{" "}
-            <span className="special">boilerplate</span>{" "}
-            <span className="special">code.</span>
+            <span className="special">Stop</span> <span className="special">writing</span>{" "}
+            <span className="special">boilerplate</span> <span className="special">code.</span>
           </h1>
           <p className="mx-auto max-w-[700px] text-center text-foreground md:text-xl">
             This is a Next.js project template powered by{" "}
@@ -68,16 +66,8 @@ export default function Hero() {
                 colorInterpolationFilters="sRGB"
               >
                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="BackgroundImageFix"
-                  result="shape"
-                />
-                <feGaussianBlur
-                  stdDeviation="52.4"
-                  result="effect1_foregroundBlur_1276_1297"
-                />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="52.4" result="effect1_foregroundBlur_1276_1297" />
               </filter>
               <linearGradient
                 id="paint0_linear_1276_1297"
@@ -132,16 +122,8 @@ export default function Hero() {
                 colorInterpolationFilters="sRGB"
               >
                 <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="BackgroundImageFix"
-                  result="shape"
-                />
-                <feGaussianBlur
-                  stdDeviation="52.4"
-                  result="effect1_foregroundBlur_1276_1295"
-                />
+                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                <feGaussianBlur stdDeviation="52.4" result="effect1_foregroundBlur_1276_1295" />
               </filter>
               <linearGradient
                 id="paint0_linear_1276_1295"

@@ -14,9 +14,7 @@ export default function Logo() {
           "h-8",
           "z-30 flex items-center gap-1",
           "text-base font-bold tracking-[0.2em]",
-          sidebar.isExpanded
-            ? "text-foreground m:text-white"
-            : "text-foreground"
+          sidebar.isExpanded ? "text-foreground m:text-white" : "text-foreground"
         )}
       >
         <BaseLogo />

@@ -25,10 +25,8 @@ export default async function NotFound() {
           <Logo className="mb-12 h-[8rem] w-[8rem]" length={128} />
           <span className="mb-2">404</span>
           <h1 className="mb-6">
-            <span className="special">Page</span>{" "}
-            <span className="special">could</span>{" "}
-            <span className="special">not</span>{" "}
-            <span className="special">be</span>{" "}
+            <span className="special">Page</span> <span className="special">could</span>{" "}
+            <span className="special">not</span> <span className="special">be</span>{" "}
             <span className="special">found</span>
           </h1>
           <p>This page does not exist. Try starting again from the homepage.</p>

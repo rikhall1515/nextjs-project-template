@@ -44,8 +44,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "NextJS Template - rikhall.proj",
-    description:
-      "This is a Next.JS template designed and made by Rikard Hallberg.",
+    description: "This is a Next.JS template designed and made by Rikard Hallberg.",
     url: env.NEXT_PUBLIC_BASE_URL,
     images: "/static/og.png",
     siteName: "RikardTemplate",
@@ -54,8 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     title: "NextJS Template - rikhall.proj",
-    description:
-      "This is a Next.JS template designed and made by Rikard Hallberg.",
+    description: "This is a Next.JS template designed and made by Rikard Hallberg.",
     images: "/static/og.png",
     card: "summary_large_image",
     creator: "@rikhall_",

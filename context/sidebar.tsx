@@ -20,26 +20,18 @@ type SidebarStore = {
   sidebarRef: RefObject<HTMLElement>;
 };
 
-export const SidebarContext = createContext<SidebarStore | undefined>(
-  undefined
-);
+export const SidebarContext = createContext<SidebarStore | undefined>(undefined);
 export function useSidebarContext() {
   const sidebarStore = useContext(SidebarContext);
 
   if (sidebarStore === undefined) {
-    throw new Error(
-      "useSidebarContext must be used with a SidebarContext provider"
-    );
+    throw new Error("useSidebarContext must be used with a SidebarContext provider");
   }
 
   return sidebarStore;
 }
 
-export default function SidebarContextProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SidebarContextProvider({ children }: { children: React.ReactNode }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isAtTop, setIsAtTop] = useState(true);
   const mainMenuBtnRef = useRef<HTMLButtonElement>(null);

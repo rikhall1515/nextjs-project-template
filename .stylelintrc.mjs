@@ -30,10 +30,7 @@ export default {
     // Allow Tailwind-based CSS Rules
     "at-rule-no-unknown": [true, { ignoreAtRules: CUSTOM_AT_RULES }],
     // Allow the Global CSS Selector
-    "selector-pseudo-class-no-unknown": [
-      true,
-      { ignorePseudoClasses: ["global"] },
-    ],
+    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }],
     // Enforces the order of the CSS properties to be in alphabetical order
     "order/properties-alphabetical-order": true,
     "no-descending-specificity": null,

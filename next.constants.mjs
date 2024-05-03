@@ -52,6 +52,4 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
  *
  * Note that this is a custom Environment Variable that can be defined by us when necessary
  */
-export const VERCEL_REVALIDATE = Number(
-  process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300
-);
+export const VERCEL_REVALIDATE = Number(process.env.NEXT_PUBLIC_VERCEL_REVALIDATE_TIME || 300);

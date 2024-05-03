@@ -2,11 +2,7 @@ import CookieBanner from "@/components/cookies";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 
-export default function PublicLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />

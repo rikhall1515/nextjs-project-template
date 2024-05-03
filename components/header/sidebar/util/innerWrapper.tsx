@@ -4,11 +4,7 @@ import { useState } from "react";
 import { useSidebarContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
-export default function InnerWrapper({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function InnerWrapper({ children }: { children: React.ReactNode }) {
   const sidebar = useSidebarContext();
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);

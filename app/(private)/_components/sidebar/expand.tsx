@@ -21,14 +21,8 @@ export default function ExpandDashboardSidebar() {
         )}
         onClick={dashboardCtx.toggle}
       >
-        <FaArrowLeft
-          className={cn(dashboardCtx.isExpanded ? "rotate-0" : "rotate-180")}
-        />
-        <span
-          className={cn(
-            dashboardCtx.isExpanded ? "w-auto opacity-100" : "w-0 opacity-0"
-          )}
-        >
+        <FaArrowLeft className={cn(dashboardCtx.isExpanded ? "rotate-0" : "rotate-180")} />
+        <span className={cn(dashboardCtx.isExpanded ? "w-auto opacity-100" : "w-0 opacity-0")}>
           Collapse
         </span>
       </Button>

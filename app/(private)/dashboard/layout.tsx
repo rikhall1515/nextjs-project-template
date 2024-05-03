@@ -3,11 +3,7 @@ import Sidebar from "@/app/(private)/_components/sidebar";
 import CookieBanner from "@/components/cookies";
 import { useDashboardContext } from "@/context/dashboard";
 import { cn } from "@/lib/utils";
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const dashboardCtx = useDashboardContext();
   return (
     <>

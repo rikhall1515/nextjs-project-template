@@ -15,33 +15,23 @@ type DashboardStore = {
   toggle: () => void;
 };
 
-export const DashboardContext = createContext<DashboardStore | undefined>(
-  undefined
-);
+export const DashboardContext = createContext<DashboardStore | undefined>(undefined);
 export function useDashboardContext() {
   const sidebarStore = useContext(DashboardContext);
 
   if (sidebarStore === undefined) {
-    throw new Error(
-      "useDashboardContext must be used with a DashboardContext provider"
-    );
+    throw new Error("useDashboardContext must be used with a DashboardContext provider");
   }
 
   return sidebarStore;
 }
 
-export default function DashboardContextProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardContextProvider({ children }: { children: React.ReactNode }) {
   const [isExpanded, setIsExpanded] = useState(true);
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    setIsExpanded(
-      localStorage.getItem("preference_sidebar_expanded") === "true"
-    );
+    setIsExpanded(localStorage.getItem("preference_sidebar_expanded") === "true");
   }, []);
   const toggle = () => {
     setIsExpanded(!isExpanded);

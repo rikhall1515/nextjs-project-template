@@ -3,11 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
-import {
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from "@/components/ui/tooltip";
+import { Tooltip, TooltipTrigger, TooltipContent } from "@/components/ui/tooltip";
 import { useDashboardContext } from "@/context/dashboard";
 import { cn } from "@/lib/utils";
 
@@ -17,11 +13,7 @@ type ItemWrapperProps = {
   name: string;
 };
 
-export default function ItemWrapper({
-  children,
-  alert,
-  name,
-}: ItemWrapperProps) {
+export default function ItemWrapper({ children, alert, name }: ItemWrapperProps) {
   const dashboardCtx = useDashboardContext();
   const pathname = usePathname();
   return (
@@ -43,19 +35,12 @@ export default function ItemWrapper({
           asChild
         >
           <Link href={`/dashboard/${name}`}>
-            <div
-              className={cn(
-                "flex items-center",
-                dashboardCtx.isExpanded ? "gap-3" : "gap-0"
-              )}
-            >
+            <div className={cn("flex items-center", dashboardCtx.isExpanded ? "gap-3" : "gap-0")}>
               {children}{" "}
               <span
                 className={cn(
                   "capitalize",
-                  dashboardCtx.isExpanded
-                    ? "w-[100%] opacity-100"
-                    : "w-[0%] opacity-0"
+                  dashboardCtx.isExpanded ? "w-[100%] opacity-100" : "w-[0%] opacity-0"
                 )}
               >
                 {name}
@@ -88,18 +73,13 @@ export default function ItemWrapper({
             >
               <Link href={`/dashboard/${name}`}>
                 <div
-                  className={cn(
-                    "flex items-center",
-                    dashboardCtx.isExpanded ? "gap-3" : "gap-0"
-                  )}
+                  className={cn("flex items-center", dashboardCtx.isExpanded ? "gap-3" : "gap-0")}
                 >
                   {children}
                   <span
                     className={cn(
                       "capitalize",
-                      dashboardCtx.isExpanded
-                        ? "w-[100%] opacity-100"
-                        : "w-[0%] opacity-0"
+                      dashboardCtx.isExpanded ? "w-[100%] opacity-100" : "w-[0%] opacity-0"
                     )}
                   >
                     {name}

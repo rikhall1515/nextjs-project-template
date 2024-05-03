@@ -4,9 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   isServer: typeof window === "undefined",
   server: {
-    NODE_ENV: z
-      .enum(["development", "test", "production"])
-      .default("development"),
+    NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   },
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,

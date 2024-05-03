@@ -1,10 +1,10 @@
-.checkBox + span {
+.checkBox:checked + span {
   animation: check-bounce 250ms;
 
   @apply border-[1rem] border-primary;
 }
 
-.checkBox + span::before {
+.checkBox:checked + span::before {
   @apply absolute left-2 top-2 content-[""];
 
   animation: checked 125ms 250ms forwards;
@@ -12,6 +12,72 @@
   border-right: 4px solid transparent;
   transform: rotate(45deg);
   transform-origin: 0% 100%;
+}
+
+input[name="advertising"]:checked + span,
+input[name="preferences"]:checked + span,
+input[name="analytics"]:checked + span,
+input[name="necessary"]:checked + span {
+  animation: checkBounce 250ms;
+
+  @apply border-[1rem] border-primary-foreground;
+}
+
+input[name="advertising"]:checked + span::before,
+input[name="preferences"]:checked + span::before,
+input[name="analytics"]:checked + span::before,
+input[name="necessary"]:checked + span::before {
+  @apply absolute left-[-0.5rem] top-[-0.4rem] content-[""];
+
+  animation: checked-cookie 125ms 250ms forwards;
+  border-bottom: 4px solid transparent;
+  border-right: 4px solid transparent;
+  transform: rotate(45deg);
+  transform-origin: 0% 100%;
+}
+
+div[data-state="active"][id="consentTab"],
+div[data-state="active"][id="detailsTab"],
+div[data-state="active"][id="aboutTab"] {
+  @apply flex max-h-[auto] min-h-[20vh] w-full flex-1 flex-col overflow-y-auto overflow-x-hidden border-b-2 border-b-border;
+}
+
+div[data-state="inactive"][id="consentTab"],
+div[data-state="inactive"][id="detailsTab"],
+div[data-state="inactive"][id="aboutTab"] {
+  @apply box-border h-auto w-full overflow-auto align-baseline;
+}
+
+div[id="consentTab"],
+div[id="detailsTab"],
+div[id="aboutTab"] {
+  @apply overflow-auto bg-[transparent] align-baseline;
+}
+
+@keyframes checked-cookie {
+  0% {
+    height: 0;
+    transform: translate(0, 0) rotate(45deg);
+    width: 0;
+
+    @apply border-foreground;
+  }
+
+  33% {
+    height: 0;
+    transform: translate(0, 0) rotate(45deg);
+    width: 8px;
+
+    @apply border-foreground;
+  }
+
+  100% {
+    height: 16px;
+    transform: translate(0, -8px) rotate(45deg);
+    width: 8px;
+
+    @apply border-foreground;
+  }
 }
 
 @keyframes checked {

@@ -27,9 +27,7 @@ export const MenuButton = forwardRef<Ref, Props>(function MenuButton() {
         }}
         ref={sidebar.mainMenuBtnRef}
       >
-        <div
-          className={cn("menuBtn h-6 w-6", sidebar.isExpanded ? "opened" : "")}
-        >
+        <div className={cn("menuBtn h-6 w-6", sidebar.isExpanded ? "opened" : "")}>
           <span></span>
           <span></span>
           <span></span>

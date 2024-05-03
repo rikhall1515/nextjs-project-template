@@ -5,11 +5,7 @@
     "serve": {
       "cache": false,
       "persistent": true,
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL"
-      ]
+      "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_BASE_URL", "NEXT_PUBLIC_VERCEL_URL"]
     },
     "build": {
       "inputs": [
@@ -19,20 +15,12 @@
         "*.{json,ts,tsx,mjs,yml}"
       ],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL"
-      ]
+      "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_BASE_URL", "NEXT_PUBLIC_VERCEL_URL"]
     },
     "start": {
       "cache": false,
       "persistent": true,
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL"
-      ]
+      "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_BASE_URL", "NEXT_PUBLIC_VERCEL_URL"]
     },
     "deploy": {
       "inputs": [
@@ -42,11 +30,7 @@
         "*.{json,ts,tsx,mjs,yml}"
       ],
       "outputs": [".next/**", "!.next/cache/**"],
-      "env": [
-        "NEXT_PUBLIC_VERCEL_ENV",
-        "NEXT_PUBLIC_BASE_URL",
-        "NEXT_PUBLIC_VERCEL_URL"
-      ]
+      "env": ["NEXT_PUBLIC_VERCEL_ENV", "NEXT_PUBLIC_BASE_URL", "NEXT_PUBLIC_VERCEL_URL"]
     },
     "lint:js": {
       "inputs": [
