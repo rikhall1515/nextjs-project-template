@@ -1,22 +1,12 @@
 "use client";
-import type { UseFormSetValue } from "react-hook-form";
 
 import { Button } from "@/components/ui/button";
 import { useCookieContext } from "@/context/cookie";
+import { useCookieFormContext } from "@/context/cookie/form";
 
-type CookieInputs = {
-  necessary: boolean;
-  preferences: boolean;
-  analytics: boolean;
-  advertising: boolean;
-};
-
-type ButtonProps = {
-  setValue: UseFormSetValue<CookieInputs>;
-};
-
-export function DenyAll({ setValue }: ButtonProps) {
+export function DenyAll() {
   const cookieStore = useCookieContext();
+  const { setValue } = useCookieFormContext();
   return (
     <>
       <Button
@@ -38,8 +28,9 @@ export function DenyAll({ setValue }: ButtonProps) {
   );
 }
 
-export function AcceptAll({ setValue }: ButtonProps) {
+export function AcceptAll() {
   const cookieStore = useCookieContext();
+  const { setValue } = useCookieFormContext();
   return (
     <>
       <Button
