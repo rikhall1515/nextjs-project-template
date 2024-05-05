@@ -1,3 +1,4 @@
+import CookieFormContextProvider from "@/context/cookie/form";
 import { cn } from "@/lib/utils";
 
 import ChangeMenu from "./changeMenu";
@@ -8,7 +9,9 @@ export default function CookieTray() {
   return (
     <>
       <div className={cn("transition-all")}>
-        <ManageConsent />
+        <CookieFormContextProvider>
+          <ManageConsent />
+        </CookieFormContextProvider>
         <ChangeMenu />
         <CookieToast />
       </div>
