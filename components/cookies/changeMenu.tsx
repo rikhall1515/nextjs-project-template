@@ -81,6 +81,7 @@ export default function ChangeMenu() {
               onClick={() => {
                 cookie.toggleSelectCookies(false, false, false, false);
                 resetCookieConsentValue();
+                cookie.toggleChangeConsentMenu();
               }}
               variant="outline"
             >
@@ -90,13 +91,6 @@ export default function ChangeMenu() {
               onClick={() => {
                 cookie.toggleChangeConsentMenu();
                 cookie.toggleManageConsentMenu();
-                cookie.toggleSelectCookies(
-                  cookie.preferences,
-                  cookie.analytics,
-                  cookie.advertising,
-                  false
-                );
-                resetCookieConsentValue();
               }}
             >
               Change Consent
