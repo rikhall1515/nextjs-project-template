@@ -8,16 +8,30 @@ import { defaultCookieConsentName, defaultCookieExpires, SAME_SITE_OPTIONS } fro
  * to: https://web.dev/samesite-cookie-recipes/#handling-incompatible-clients
  * @param {*} name optional name of the cookie
  */
-export const getCookieConsentValue = (name = defaultCookieConsentName) => {
+export const getCookieConsentValue = (
+  name = defaultCookieConsentName
+): { preferences: boolean; analytics: boolean; advertising: boolean; consent: boolean } => {
   let cookieValue = Cookies.get(name);
 
   // if the cookieValue is undefined check for the legacy cookie
   if (cookieValue === undefined) {
     cookieValue = Cookies.get(getLegacyCookieName(name));
   }
-  if (cookieValue === undefined) return [false, false, false];
+  if (cookieValue === undefined) {
+    return {
+      preferences: false,
+      analytics: false,
+      advertising: false,
+      consent: false,
+    };
+  }
   const values = cookieValue.split(":")[1];
-  const booleans = Array.from(values).map((v) => v === "1");
+  const booleans = {
+    preferences: values[0] === "1",
+    analytics: values[1] === "1",
+    advertising: values[2] === "1",
+    consent: true,
+  };
   return booleans;
 };
 
