@@ -1,6 +1,8 @@
 import ThemeToggle from "@/components/themeToggle";
 import { env } from "@/env/client";
 
+import ButtonCookie from "./btnCookie";
+
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
@@ -22,7 +24,7 @@ export default function Footer() {
                 <a href="#">Customer Support</a>
               </li>
               <li className="me-4 last:mr-0 md:mr-6">
-                <a href="#">Privacy Settings</a>
+                <ButtonCookie />
               </li>
               <li className="me-4 last:mr-0 md:mr-6">
                 <a href="#">Terms</a>
