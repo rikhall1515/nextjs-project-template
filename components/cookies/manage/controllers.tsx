@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { memo } from "react";
 import type { Path } from "react-hook-form";
 import { Controller } from "react-hook-form";
 
@@ -7,7 +7,11 @@ import { useCookieFormContext } from "@/context/cookie/form";
 import { cn } from "@/lib/utils";
 import type { CookieInputs } from "@/types/cookie";
 
-export function ConsentTabController({ name }: { name: Path<CookieInputs> }) {
+export const ConsentTabController = memo(function ConsentTabController({
+  name,
+}: {
+  name: Path<CookieInputs>;
+}) {
   const { register, control, formState } = useCookieFormContext();
 
   return (
@@ -54,9 +58,9 @@ export function ConsentTabController({ name }: { name: Path<CookieInputs> }) {
       />
     </>
   );
-}
+});
 
-export function DetailsTabController({
+export const DetailsTabController = memo(function DetailsTabController({
   name,
   children,
   amount,
@@ -135,4 +139,4 @@ export function DetailsTabController({
       />
     </>
   );
-}
+});

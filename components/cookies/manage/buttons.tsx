@@ -1,23 +1,25 @@
 "use client";
 
+import { memo } from "react";
+import { FaWindowClose } from "react-icons/fa";
+
 import { Button } from "@/components/ui/button";
-import { useCookieContext } from "@/context/cookie";
 import { useCookieFormContext } from "@/context/cookie/form";
+import { useCookieMenuAPIContext } from "@/context/cookie/menu";
 
 export function DenyAll() {
-  const cookieStore = useCookieContext();
+  const { toggleManageConsentMenu } = useCookieMenuAPIContext();
   const { setValue } = useCookieFormContext();
   return (
     <>
       <Button
         type="submit"
-        tabIndex={cookieStore.isManageConsentMenuOpen ? 0 : -1}
         onClick={() => {
           setValue("necessary", true);
           setValue("preferences", false);
           setValue("analytics", false);
           setValue("advertising", false);
-          cookieStore.toggleManageConsentMenu();
+          toggleManageConsentMenu();
         }}
         variant="outline"
         className="flex h-[3rem] w-full grow items-center justify-center rounded-lg px-6 font-bold transition-all md:w-fit"
@@ -29,19 +31,18 @@ export function DenyAll() {
 }
 
 export function AcceptAll() {
-  const cookieStore = useCookieContext();
+  const { toggleManageConsentMenu } = useCookieMenuAPIContext();
   const { setValue } = useCookieFormContext();
   return (
     <>
       <Button
         type="submit"
-        tabIndex={cookieStore.isManageConsentMenuOpen ? 0 : -1}
         onClick={() => {
           setValue("necessary", true);
           setValue("preferences", true);
           setValue("analytics", true);
           setValue("advertising", true);
-          cookieStore.toggleManageConsentMenu();
+          toggleManageConsentMenu();
         }}
         variant="default"
         className="flex h-[3rem] w-full grow items-center justify-center rounded-lg px-6 font-bold transition-all md:w-fit"
@@ -53,14 +54,13 @@ export function AcceptAll() {
 }
 
 export function AcceptSelection() {
-  const cookieStore = useCookieContext();
+  const { toggleManageConsentMenu } = useCookieMenuAPIContext();
   return (
     <>
       <Button
         type="submit"
-        tabIndex={cookieStore.isManageConsentMenuOpen ? 0 : -1}
         onClick={() => {
-          cookieStore.toggleManageConsentMenu();
+          toggleManageConsentMenu();
         }}
         variant="outline"
         className="flex h-[3rem] w-full grow items-center justify-center rounded-lg px-6 font-bold transition-all md:w-fit"
@@ -70,3 +70,19 @@ export function AcceptSelection() {
     </>
   );
 }
+
+export const CloseModal = memo(function CloseModal() {
+  const { toggleManageConsentMenu } = useCookieMenuAPIContext();
+  return (
+    <>
+      <Button
+        onClick={toggleManageConsentMenu}
+        className="absolute right-[1rem] top-[1rem]"
+        aria-label="Close manage consent modal"
+        variant="ghost"
+      >
+        <FaWindowClose className="h-8 w-8" />
+      </Button>
+    </>
+  );
+});
