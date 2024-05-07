@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo } from "react";
 import type {
   Control,
   FormState,
@@ -25,7 +25,7 @@ import { useForm, useWatch } from "react-hook-form";
 import { setCookie } from "@/lib/cookie/utils";
 import type { CookieInputs } from "@/types/cookie";
 
-import { useCookieContext } from ".";
+import { useCookieAPIContext, useCookieContext } from ".";
 export type CookieFormStore = {
   clearErrors: UseFormClearErrors<CookieInputs>;
   control: Control<CookieInputs, any>;
@@ -67,29 +67,40 @@ export const useFormValues = () => {
 };
 
 export default function CookieFormContextProvider({ children }: { children: React.ReactNode }) {
-  const cookieStore = useCookieContext();
+  const { preferences, advertising, analytics } = useCookieContext();
+  const { toggleSelectCookies } = useCookieAPIContext();
   const form = useForm<CookieInputs>({
     defaultValues: {
       necessary: true,
-      preferences: cookieStore.preferences,
-      advertising: cookieStore.advertising,
-      analytics: cookieStore.analytics,
+      preferences: preferences,
+      advertising: advertising,
+      analytics: analytics,
     },
   });
-  const onSubmit: SubmitHandler<CookieInputs> = (data) => {
-    setCookie(`1:${data.preferences ? 1 : 0}${data.analytics ? 1 : 0}${data.advertising ? 1 : 0}`);
-    cookieStore.toggleSelectCookies(data.preferences, data.analytics, data.advertising, true);
-  };
+  const onSubmit: SubmitHandler<CookieInputs> = useCallback(
+    (data) => {
+      setCookie(
+        `1:${data.preferences ? 1 : 0}${data.analytics ? 1 : 0}${data.advertising ? 1 : 0}`
+      );
+      toggleSelectCookies(data.preferences, data.analytics, data.advertising, true);
+    },
+    [toggleSelectCookies]
+  );
   useEffect(() => {
-    form.setValue("preferences", cookieStore.preferences);
-    form.setValue("analytics", cookieStore.analytics);
-    form.setValue("advertising", cookieStore.advertising);
-  }, [cookieStore.preferences, cookieStore.advertising, cookieStore.analytics]);
+    form.setValue("preferences", preferences);
+    form.setValue("analytics", analytics);
+    form.setValue("advertising", advertising);
+  }, [preferences, advertising, analytics]);
+  const data = useMemo(
+    () => ({
+      ...form,
+      onSubmit,
+    }),
+    [form, onSubmit]
+  );
   return (
     <>
-      <CookieFormContext.Provider value={{ ...form, onSubmit }}>
-        {children}
-      </CookieFormContext.Provider>
+      <CookieFormContext.Provider value={data}>{children}</CookieFormContext.Provider>
     </>
   );
 }
