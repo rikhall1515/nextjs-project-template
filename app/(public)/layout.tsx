@@ -1,17 +1,18 @@
 import CookieBanner from "@/components/cookies";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import CookieContextProvider from "@/context/cookie";
+import CookieMenuContextProvider from "@/context/cookie/menu";
 
 export default function PublicLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <Header />
-      <main id="content">{children}</main>
-      <CookieContextProvider>
-        <Footer />
+      <CookieMenuContextProvider>
+        <Header />
         <CookieBanner />
-      </CookieContextProvider>
+        <main id="content">{children}</main>
+
+        <Footer />
+      </CookieMenuContextProvider>
     </>
   );
 }
