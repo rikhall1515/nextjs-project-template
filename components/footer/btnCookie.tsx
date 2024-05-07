@@ -2,16 +2,15 @@
 import { memo } from "react";
 
 import { Button } from "@/components/ui/button";
-import { useCookieContext } from "@/context/cookie";
+import { useCookieMenuAPIContext } from "@/context/cookie/menu";
 
 function ButtonCookie() {
-  const { toggleChangeConsentMenu } = useCookieContext();
+  const { toggleManageConsentMenu } = useCookieMenuAPIContext();
   return (
     <>
       <Button
-        asChild
         variant="link"
-        onClick={() => toggleChangeConsentMenu()}
+        onClick={toggleManageConsentMenu}
         className="h-fit p-0 text-foreground"
       >
         <span>Privacy Settings</span>
