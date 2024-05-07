@@ -1,9 +1,8 @@
-"use client";
 import { FaBoxArchive, FaFileLines } from "react-icons/fa6";
 
 import LogOut from "./logout";
 import Privacy from "./privacy";
-import SidebarItem from "./sidebarItem";
+import { SidebarItem } from "./sidebarItem";
 export default function Nav() {
   return (
     <>

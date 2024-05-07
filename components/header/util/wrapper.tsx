@@ -2,11 +2,11 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-import { useSidebarContext } from "@/context/sidebar";
+import { useHeaderAPIContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
 export default function HeaderWrapper({ children }: { children: React.ReactNode }) {
-  const { setIsAtTop } = useSidebarContext();
+  const { setIsAtTop } = useHeaderAPIContext();
   const { ref, inView } = useInView({
     threshold: 0,
     initialInView: true,
@@ -29,15 +29,7 @@ export default function HeaderWrapper({ children }: { children: React.ReactNode 
           inView === true || undefined || null ? "" : "scrolled"
         )}
       >
-        <div
-          className={cn(
-            "flex items-center justify-between",
-            "h-full w-full max-w-[103rem]",
-            "pxPage mx-auto"
-          )}
-        >
-          {children}
-        </div>
+        {children}
       </header>
     </>
   );

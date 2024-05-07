@@ -2,15 +2,16 @@
 import { type KeyboardEventHandler, useState } from "react";
 import { FaDoorOpen } from "react-icons/fa6";
 
-import { useSidebarContext } from "@/context/sidebar";
+import { useSidebarExpandedContext, useSidebarRefContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
 export default function LogOut() {
   const [isLoggedIn] = useState(false);
-  const sidebar = useSidebarContext();
+  const { isExpanded } = useSidebarExpandedContext();
+  const { mainMenuBtnRef } = useSidebarRefContext();
   const trapFocus: KeyboardEventHandler<HTMLAnchorElement> = (e) => {
-    if (e.code === "Tab" && sidebar.mainMenuBtnRef.current) {
-      sidebar.isExpanded && sidebar.mainMenuBtnRef.current.focus();
+    if (e.code === "Tab" && mainMenuBtnRef.current) {
+      isExpanded && mainMenuBtnRef.current.focus();
     }
   };
   return (

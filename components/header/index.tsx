@@ -1,4 +1,5 @@
 import SidebarContextProvider from "@/context/sidebar";
+import { cn } from "@/lib/utils";
 
 import Logo from "./logo";
 import Nav from "./menu";
@@ -12,11 +13,19 @@ export default function Header() {
       <JumpToContent />
       <SidebarContextProvider>
         <HeaderWrapper>
-          <div className="flex items-center gap-12">
-            <Logo />
-            <Nav />
+          <div
+            className={cn(
+              "flex items-center justify-between",
+              "h-full w-full max-w-[103rem]",
+              "pxPage mx-auto"
+            )}
+          >
+            <div className="flex items-center gap-12">
+              <Logo />
+              <Nav />
+            </div>
+            <Sidebar />
           </div>
-          <Sidebar />
         </HeaderWrapper>
       </SidebarContextProvider>
     </>

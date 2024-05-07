@@ -2,17 +2,18 @@
 import { type KeyboardEventHandler, useState } from "react";
 import { FaPassport } from "react-icons/fa6";
 
-import { useSidebarContext } from "@/context/sidebar";
+import { useSidebarExpandedContext, useSidebarRefContext } from "@/context/sidebar";
 
-import SidebarItem from "./sidebarItem";
+import { SidebarItem } from "./sidebarItem";
 
 export default function Privacy() {
-  const sidebar = useSidebarContext();
+  const { isExpanded } = useSidebarExpandedContext();
+  const { mainMenuBtnRef } = useSidebarRefContext();
   const [isLoggedIn] = useState(false);
   const trapFocus: KeyboardEventHandler<HTMLAnchorElement> = (e) => {
-    if (e.code === "Tab" && !e.shiftKey && sidebar.mainMenuBtnRef.current) {
+    if (e.code === "Tab" && !e.shiftKey && mainMenuBtnRef.current) {
       e.preventDefault();
-      sidebar.isExpanded && sidebar.mainMenuBtnRef.current.focus();
+      isExpanded && mainMenuBtnRef.current.focus();
     }
   };
   return (

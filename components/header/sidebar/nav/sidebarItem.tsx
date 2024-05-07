@@ -1,12 +1,12 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { KeyboardEventHandler } from "react";
+import { memo, type KeyboardEventHandler } from "react";
 
-import { useSidebarContext } from "@/context/sidebar";
+import { useHeaderAPIContext, useSidebarExpandedContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
-export default function SidebarItem({
+export const SidebarItem = memo(function SidebarItem({
   href,
   classes = "",
   text,
@@ -21,12 +21,13 @@ export default function SidebarItem({
   onKeyDown?: KeyboardEventHandler<HTMLAnchorElement> | undefined;
   children?: React.ReactNode;
 }) {
-  const sidebar = useSidebarContext();
+  const { isExpanded } = useSidebarExpandedContext();
+  const { toggle } = useHeaderAPIContext();
   const pathname = usePathname();
   let attr = {};
   attr = {
-    tabIndex: sidebar.isExpanded ? 0 : -1,
-    onClick: () => sidebar.toggle(),
+    tabIndex: isExpanded ? 0 : -1,
+    onClick: () => toggle(),
   };
   if (isLast) {
     attr = {
@@ -60,4 +61,4 @@ export default function SidebarItem({
       </Link>
     </>
   );
-}
+});
