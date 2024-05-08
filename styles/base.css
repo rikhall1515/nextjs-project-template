@@ -147,8 +147,6 @@ html.dark {
 :root {
   --page-x-spacing: 3rem;
   --page-x-spacing2: 2rem;
-  --header-height: 8rem;
-  --header-height-scrolled: 4.5rem;
 }
 
 @media (width >= 64rem) {
@@ -180,4 +178,20 @@ body {
 
 .pxPageTwo {
   @apply px-6 m:px-[--page-x-spacing2];
+}
+
+dialog {
+  @apply m-0 block [inset-inline-end:auto] [inset-inline-start:auto];
+}
+
+dialog:-internal-dialog-in-top-layer {
+  @apply visible max-h-[100vh] max-w-[100vw];
+}
+
+#sidebarMenuNav:-internal-dialog-in-top-layer::backdrop {
+  @apply pointer-events-none hidden opacity-0;
+}
+
+#sidebarMenuNav:modal {
+  @apply ![overlay:none];
 }

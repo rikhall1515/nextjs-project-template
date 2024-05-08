@@ -120,13 +120,6 @@ div[id="aboutTab"] {
   }
 }
 
-header.scrolled {
-  height: var(--header-height-scrolled);
-
-  @apply border-border;
-  @apply bg-background;
-}
-
 .menuBtn {
   --size: 1.5rem;
   --duration: 250ms;

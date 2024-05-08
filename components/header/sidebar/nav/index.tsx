@@ -1,9 +1,7 @@
-"use client";
-import { FaBoxArchive, FaFileLines } from "react-icons/fa6";
+import { FaBoxArchive, FaFileLines, FaPassport } from "react-icons/fa6";
 
-import LogOut from "./logout";
 import Privacy from "./privacy";
-import SidebarItem from "./sidebarItem";
+import { SidebarItem } from "./sidebarItem";
 export default function Nav() {
   return (
     <>
@@ -11,20 +9,30 @@ export default function Nav() {
         {/* <LoginDashboard /> */}
         <ul className="w-full">
           <li className="w-full border-t-2 border-border">
-            <SidebarItem href="/archive" text="Archive">
-              <FaBoxArchive className="h-6 w-6" />
+            <SidebarItem href="/archive">
+              <div className="ml-[2.125rem] w-6 fill-[inherit] stroke-[inherit]">
+                <FaBoxArchive className="h-6 w-6" />
+              </div>
+              <span>Archive</span>
             </SidebarItem>
           </li>
           <li className="w-full border-t-2 border-border">
-            <SidebarItem href="/terms" text="Terms of Service">
-              <FaFileLines className="h-6 w-6" />
+            <SidebarItem href="/terms">
+              <div className="ml-[2.125rem] w-6 fill-[inherit] stroke-[inherit]">
+                <FaFileLines className="h-6 w-6" />
+              </div>
+              <span>Terms of Service</span>
             </SidebarItem>
           </li>
           <li className="w-full border-y-2 border-border">
-            <Privacy />
+            <Privacy>
+              <div className="ml-[2.125rem] w-6">
+                <FaPassport className="h-6 w-6" />
+              </div>
+              <span>Privacy</span>
+            </Privacy>
           </li>
         </ul>
-        <LogOut />
       </nav>
     </>
   );

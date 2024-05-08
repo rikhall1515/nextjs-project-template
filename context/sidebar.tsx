@@ -1,66 +1,77 @@
 "use client";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import {
-  type Dispatch,
-  type RefObject,
-  type SetStateAction,
-  createContext,
-  useContext,
-  useRef,
-  useState,
-} from "react";
+import type { RefObject } from "react";
+import { createContext, useCallback, useContext, useMemo, useRef } from "react";
 
-type SidebarStore = {
-  isExpanded: boolean;
-  setIsExpanded: Dispatch<SetStateAction<boolean>>;
-  isAtTop: boolean;
-  setIsAtTop: Dispatch<SetStateAction<boolean>>;
-  toggle: () => void;
-  mainMenuBtnRef: RefObject<HTMLButtonElement>;
-  sidebarRef: RefObject<HTMLElement>;
+type SidebarRefStore = {
+  sidebarRef: RefObject<HTMLDialogElement>;
 };
 
-export const SidebarContext = createContext<SidebarStore | undefined>(undefined);
-export function useSidebarContext() {
-  const sidebarStore = useContext(SidebarContext);
+type SidebarExpanded = {
+  isExpanded: boolean;
+};
 
-  if (sidebarStore === undefined) {
-    throw new Error("useSidebarContext must be used with a SidebarContext provider");
+type HeaderAPIStore = {
+  toggleSidebarDialog: () => void;
+};
+
+export const SidebarExpandedContext = createContext<SidebarExpanded | undefined>(undefined);
+export const SidebarRefContext = createContext<SidebarRefStore | undefined>(undefined);
+export const HeaderAPIContext = createContext<HeaderAPIStore | undefined>(undefined);
+
+export function useHeaderAPIContext() {
+  const headerAPIStore = useContext(HeaderAPIContext);
+
+  if (headerAPIStore === undefined) {
+    throw new Error("useHeaderAPIContext must be used with a HeaderAPIContext provider");
   }
 
-  return sidebarStore;
+  return headerAPIStore;
+}
+
+export function useSidebarRefContext() {
+  const sidebarRefStore = useContext(SidebarRefContext);
+
+  if (sidebarRefStore === undefined) {
+    throw new Error("useSidebarRefContext must be used with a SidebarRefContext provider");
+  }
+
+  return sidebarRefStore;
 }
 
 export default function SidebarContextProvider({ children }: { children: React.ReactNode }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isAtTop, setIsAtTop] = useState(true);
-  const mainMenuBtnRef = useRef<HTMLButtonElement>(null);
-  const sidebarRef = useRef<HTMLElement>(null);
-  const toggle = () => {
-    setIsExpanded(!isExpanded);
-    if (sidebarRef.current) {
-      if (!isExpanded) {
-        disableBodyScroll(sidebarRef.current);
-        return;
-      }
-      enableBodyScroll(sidebarRef.current);
+  const sidebarRef = useRef<HTMLDialogElement>(null);
+
+  const toggleSidebarDialog = useCallback(() => {
+    if (!sidebarRef.current) {
+      return;
     }
-  };
+    if (sidebarRef.current.hasAttribute("open")) {
+      sidebarRef.current.close();
+      enableBodyScroll(sidebarRef.current);
+      return;
+    }
+    disableBodyScroll(sidebarRef.current);
+    sidebarRef.current.showModal();
+  }, []);
+
+  const api = useMemo(
+    () => ({
+      toggleSidebarDialog,
+    }),
+    [toggleSidebarDialog]
+  );
+  const refs = useMemo(
+    () => ({
+      sidebarRef,
+    }),
+    []
+  );
   return (
     <>
-      <SidebarContext.Provider
-        value={{
-          isExpanded,
-          setIsExpanded,
-          isAtTop,
-          setIsAtTop,
-          toggle,
-          mainMenuBtnRef,
-          sidebarRef,
-        }}
-      >
-        {children}
-      </SidebarContext.Provider>
+      <SidebarRefContext.Provider value={refs}>
+        <HeaderAPIContext.Provider value={api}>{children}</HeaderAPIContext.Provider>
+      </SidebarRefContext.Provider>
     </>
   );
 }

@@ -1,30 +1,25 @@
 "use client";
-import { type KeyboardEventHandler, useState } from "react";
-import { FaPassport } from "react-icons/fa6";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { useSidebarContext } from "@/context/sidebar";
+import { cn } from "@/lib/utils";
 
-import SidebarItem from "./sidebarItem";
+export default function Privacy({ children }: { children?: React.ReactNode }) {
+  const pathname = usePathname();
 
-export default function Privacy() {
-  const sidebar = useSidebarContext();
-  const [isLoggedIn] = useState(false);
-  const trapFocus: KeyboardEventHandler<HTMLAnchorElement> = (e) => {
-    if (e.code === "Tab" && !e.shiftKey && sidebar.mainMenuBtnRef.current) {
-      e.preventDefault();
-      sidebar.isExpanded && sidebar.mainMenuBtnRef.current.focus();
-    }
-  };
   return (
     <>
-      <SidebarItem
-        href="/privacy/"
-        text="Privacy Policy"
-        isLast={!isLoggedIn}
-        onKeyDown={trapFocus}
+      <Link
+        href="/legal/privacy-policy"
+        className={cn(
+          "group/sidebarItem relative h-[3.75rem] w-full transition-all",
+          "flex items-center gap-3",
+          pathname === "/legal/privacy-policy" ? "bg-primary text-primary-foreground" : "",
+          "hover:bg-primary"
+        )}
       >
-        <FaPassport className="h-6 w-6" />
-      </SidebarItem>
+        {children}
+      </Link>
     </>
   );
 }

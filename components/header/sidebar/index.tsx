@@ -9,12 +9,13 @@ export default function Sidebar() {
     <>
       <div className="-mr-6 block h-[4.5rem] lg:hidden">
         <MenuButton />
-        <BackDrop />
+
         {/* <SwipeArea /> */}
         <InnerWrapper>
           <TopBar />
           <Nav />
         </InnerWrapper>
+        <BackDrop />
       </div>
     </>
   );

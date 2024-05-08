@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  type Dispatch,
-  type SetStateAction,
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import type { Dispatch, SetStateAction } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 type DashboardStore = {
   isExpanded: boolean;
