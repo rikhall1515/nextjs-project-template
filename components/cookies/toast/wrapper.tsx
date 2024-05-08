@@ -16,7 +16,7 @@ export default function Wrapper({ children }: { children: React.ReactNode }) {
     <>
       <div
         className={cn(
-          "fixed bottom-0 right-0 z-[5] mb-6 flex w-full flex-col gap-3 rounded-l-lg rounded-r-none bg-background px-6 py-3 shadow transition-all md:w-fit",
+          "fixed bottom-0 right-0 z-[5] mb-6 flex w-full flex-col gap-3 rounded-l-lg rounded-r-none border-2 border-border bg-background px-6 py-3 shadow transition-all md:w-fit",
           !consent && initialVisible
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"

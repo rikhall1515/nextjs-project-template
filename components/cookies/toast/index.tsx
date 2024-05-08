@@ -11,7 +11,7 @@ export default function CookieToast() {
           {env.NEXT_PUBLIC_SITE_NAME} uses cookies to improve the website and your user experience,
           read more in the <PrivacyPolicy />.
         </p>
-        <div className="flex flex-col-reverse items-center gap-6 md:flex-row">
+        <div className="flex flex-col items-center gap-6 md:flex-row">
           <AcceptAll />
           <DenyAll />
           <ManageCookies />

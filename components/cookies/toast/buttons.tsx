@@ -18,6 +18,7 @@ export const ManageCookies = memo(function ManageCookies() {
         variant="link"
         tabIndex={consent ? -1 : 0}
         aria-label="Manage Cookies"
+        className="w-full md:w-auto"
       >
         <span>Manage Cookies</span>
       </Button>
@@ -38,6 +39,7 @@ export const DenyAll = memo(function DenyAll() {
         variant="outline"
         tabIndex={consent ? -1 : 0}
         aria-label="Deny All"
+        className="w-full md:w-auto"
       >
         <span>Deny All</span>
       </Button>
@@ -57,6 +59,7 @@ export const AcceptAll = memo(function AcceptAll() {
         }}
         tabIndex={consent ? -1 : 0}
         aria-label="Accept ALl"
+        className="w-full md:w-auto"
       >
         <span>Accept All</span>
       </Button>
