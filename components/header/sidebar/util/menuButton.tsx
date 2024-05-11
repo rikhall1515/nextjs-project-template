@@ -1,25 +1,25 @@
 "use client";
-import { forwardRef } from "react";
 
-import { useHeaderAPIContext } from "@/context/sidebar";
+import { useSidebarContext } from "@/context/sidebar";
+import { useMenuBtnRefContext } from "@/context/sidebar/btnRef";
 import { cn } from "@/lib/utils";
 
-type Props = JSX.IntrinsicElements["button"];
-
-type Ref = HTMLButtonElement;
-export const MenuButton = forwardRef<Ref, Props>(function MenuButton() {
-  const { toggleSidebarDialog } = useHeaderAPIContext();
+export default function MenuButton() {
+  const { isExpanded, toggle } = useSidebarContext();
+  const { mainMenuBtnRef } = useMenuBtnRefContext();
   return (
     <>
       <button
-        aria-expanded={false}
-        aria-label={"open menu"}
-        onClick={toggleSidebarDialog}
+        aria-expanded={isExpanded}
+        aria-label={isExpanded ? "Close menu" : "Open menu"}
+        onClick={toggle}
         className={cn("relative z-[30] fill-[inherit] p-6")}
-        aria-haspopup="menu"
-        aria-controls="sidebarMenuNav"
+        onKeyDown={(e) => {
+          if (e.code === "Escape") toggle();
+        }}
+        ref={mainMenuBtnRef}
       >
-        <div className={cn("menuBtn h-6 w-6")}>
+        <div className={cn("menuBtn h-6 w-6", isExpanded ? "opened" : "")}>
           <span></span>
           <span></span>
           <span></span>
@@ -27,4 +27,4 @@ export const MenuButton = forwardRef<Ref, Props>(function MenuButton() {
       </button>
     </>
   );
-});
+}

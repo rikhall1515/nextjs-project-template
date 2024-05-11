@@ -147,6 +147,8 @@ html.dark {
 :root {
   --page-x-spacing: 3rem;
   --page-x-spacing2: 2rem;
+  --header-height: 8rem;
+  --header-height-scrolled: 4.5rem;
 }
 
 @media (width >= 64rem) {
@@ -161,10 +163,14 @@ html.dark {
   @apply border-border;
 }
 
+html {
+  @apply bg-background;
+}
+
 html,
 body {
   @apply size-full
-    bg-background text-foreground
+    text-foreground
     [scrollbar-gutter:stable];
 }
 
@@ -185,13 +191,5 @@ dialog {
 }
 
 dialog:-internal-dialog-in-top-layer {
-  @apply visible max-h-[100vh] max-w-[100vw];
-}
-
-#sidebarMenuNav:-internal-dialog-in-top-layer::backdrop {
-  @apply pointer-events-none hidden opacity-0;
-}
-
-#sidebarMenuNav:modal {
-  @apply ![overlay:none];
+  @apply visible;
 }

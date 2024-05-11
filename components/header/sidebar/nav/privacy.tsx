@@ -2,11 +2,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import { useSidebarContext } from "@/context/sidebar";
+import { useMenuBtnRefContext } from "@/context/sidebar/btnRef";
 import { cn } from "@/lib/utils";
 
 export default function Privacy({ children }: { children?: React.ReactNode }) {
   const pathname = usePathname();
-
+  const { isExpanded, toggle } = useSidebarContext();
+  const { trapFocus } = useMenuBtnRefContext();
   return (
     <>
       <Link
@@ -17,6 +20,9 @@ export default function Privacy({ children }: { children?: React.ReactNode }) {
           pathname === "/legal/privacy-policy" ? "bg-primary text-primary-foreground" : "",
           "hover:bg-primary"
         )}
+        tabIndex={isExpanded ? 0 : -1}
+        onKeyDown={trapFocus}
+        onClick={toggle}
       >
         {children}
       </Link>
