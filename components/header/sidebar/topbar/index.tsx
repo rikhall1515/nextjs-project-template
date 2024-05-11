@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 
-import InnerMenuButton from "./menuButton";
 import SearchButton from "./searchBtn";
 
 export default function TopBar() {
@@ -15,7 +14,6 @@ export default function TopBar() {
         )}
       >
         <SearchButton />
-        <InnerMenuButton />
       </div>
     </>
   );

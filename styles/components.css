@@ -18,7 +18,7 @@ input[name="advertising"]:checked + span,
 input[name="preferences"]:checked + span,
 input[name="analytics"]:checked + span,
 input[name="necessary"]:checked + span {
-  animation: checkBounce 250ms;
+  animation: check-bounce 250ms;
 
   @apply border-[1rem] border-primary-foreground;
 }
@@ -118,6 +118,13 @@ div[id="aboutTab"] {
   100% {
     transform: scale(1);
   }
+}
+
+header.scrolled {
+  height: var(--header-height-scrolled);
+
+  @apply border-border;
+  @apply bg-background;
 }
 
 .menuBtn {

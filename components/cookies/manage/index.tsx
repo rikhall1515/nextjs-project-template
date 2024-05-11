@@ -11,7 +11,7 @@ export default function ManageConsent() {
     <>
       <ManageWrapper>
         <ScrollArea className="flex h-full w-full flex-col items-center align-baseline">
-          <Logo className="mx-auto mb-6 flex-shrink-0" />
+          <Logo className="mx-auto mb-6 h-12 w-auto flex-shrink-0" />
           <Tabs defaultValue="Consent" className="flex w-full flex-col items-center">
             <TabsList className="mx-auto mb-6">
               <TabsTrigger value="Consent">Consent</TabsTrigger>

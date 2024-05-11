@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { memo } from "react";
 
+import { useSidebarContext } from "@/context/sidebar";
 import { cn } from "@/lib/utils";
 
 export const SidebarItem = memo(function SidebarItem({
@@ -13,6 +14,7 @@ export const SidebarItem = memo(function SidebarItem({
   children?: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const { isExpanded, toggle } = useSidebarContext();
   return (
     <>
       <Link
@@ -23,6 +25,8 @@ export const SidebarItem = memo(function SidebarItem({
           pathname === href ? "bg-primary text-primary-foreground" : "",
           "hover:bg-primary"
         )}
+        tabIndex={isExpanded ? 0 : -1}
+        onClick={toggle}
       >
         {children}
       </Link>
