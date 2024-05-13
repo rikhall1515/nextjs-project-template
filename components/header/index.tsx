@@ -26,7 +26,7 @@ export default function Header() {
                 href="/"
                 className={cn(
                   "h-8",
-                  "z-[11] flex items-center gap-1",
+                  "z-[30] flex items-center gap-1",
                   "text-base font-bold tracking-[0.2em]",
                   "text-foreground"
                 )}

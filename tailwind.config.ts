@@ -208,6 +208,9 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         gradient: "gradient 6s linear infinite",
       },
+      transitionTimingFunction: {
+        customEase: "cubic-bezier(0.13, 0.87, 0.35, 1.09)",
+      },
     },
   },
   plugins: [
