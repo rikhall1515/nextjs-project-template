@@ -149,6 +149,8 @@ html.dark {
   --page-x-spacing2: 2rem;
   --header-height: 8rem;
   --header-height-scrolled: 4.5rem;
+  --sidebar-start-x: 0px;
+  --sidebar-end-x: 0px;
 }
 
 @media (width >= 64rem) {
@@ -192,4 +194,9 @@ dialog {
 
 dialog:-internal-dialog-in-top-layer {
   @apply visible;
+}
+
+.customEase {
+  transition: all 500ms cubic-bezier(0.13, 0.87, 0.35, 1.09); /* custom */
+  transition-timing-function: cubic-bezier(0.13, 0.87, 0.35, 1.09); /* custom */
 }
