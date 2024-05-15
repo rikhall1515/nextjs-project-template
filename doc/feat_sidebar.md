@@ -1,3 +1,6 @@
+# Potential ideas for new sidebar feature
+
+```tsx
 "use client";
 import { useCallback, useRef, useEffect } from "react";
 
@@ -14,25 +17,11 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
   const animationFrameIdRef = useRef<number | null>(0); // Ref to store the animation frame ID
   const touchEndXRef = useRef(0);
 
-  /**
-   * Exponentially decays the difference between end and start,
-   * inversed depending on which is biggerr, towards 100 or 40.
-   *
-   * This means that when dragging the sidebar menu to the left, it
-   * will only go 40px left before stopping after further dragging.
-   *
-   * If you drag it towards the right, it will go 100px in that direction
-   * before stopping.
-   *
-   * @argument {number} end
-   * @argument {number} start
-   * @returns {number}
-   */
   const directionAdjustedValue = useCallback((end: number, start: number) => {
     if (end > start) {
-      return 100 - Math.exp(-0.04 * (end - start) + 4.6); //exponential decay towards 100px
+      return 100 - Math.exp(-0.04 * (end - start) + 4.6);
     }
-    return -40 + Math.exp(-0.04 * (start - end) + 3.8); //exponential decay towards 40px
+    return -40 + Math.exp(-0.04 * (start - end) + 3.8);
   }, []);
 
   const handleTouchStart = useCallback(function handleTouchStart(this: HTMLElement, e: TouchEvent) {
@@ -63,27 +52,33 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
       cancelAnimationFrame(animationFrameIdRef.current);
       animationFrameIdRef.current = null;
     }
-    // The difference between where the touch ends and begins needs to be greater than
-    // 100 in either direction.
     if (Math.abs(touchEndXRef.current - touchStartXRef.current) > 100) {
       toggle();
     }
-    // Reset transform so that the base classes kick into effect as normal
+    // Optional: reset transform or update based on final state
     if (sidebarRef.current) {
       sidebarRef.current.style.transform = "";
     }
   }, [sidebarRef, toggle]);
 
+  // Clean up animation frames on component unmount
+  useEffect(() => {
+    return () => {
+      if (animationFrameIdRef.current) {
+        cancelAnimationFrame(animationFrameIdRef.current);
+      }
+    };
+  }, [isExpanded]);
   useEffect(() => {
     const sidebar = sidebarRef.current;
     if (!sidebar) return;
 
-    // Adding event listeners. PreventDefault not needed so they are passive.
-    sidebar.addEventListener("touchstart", handleTouchStart, { passive: true });
-    sidebar.addEventListener("touchmove", handleTouchMove, { passive: true });
-    sidebar.addEventListener("touchend", handleTouchEnd, { passive: true });
+    // Adding event listeners
+    sidebar.addEventListener("touchstart", handleTouchStart);
+    sidebar.addEventListener("touchmove", handleTouchMove);
+    sidebar.addEventListener("touchend", handleTouchEnd);
 
-    // Cleanup function, makes sure that listeners are garbage collected
+    // Cleanup function
     return () => {
       sidebar.removeEventListener("touchstart", handleTouchStart);
       sidebar.removeEventListener("touchmove", handleTouchMove);
@@ -100,8 +95,8 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
       <div
         className={cn(
           "fixed bottom-0 right-0 top-0 z-[29]",
-          "h-[100svh] w-[6.5rem] transition-all duration-500 ease-customEase",
-          "bg-background outline-none",
+          "ease-customEase h-[100svh] w-[6.5rem] transition-all duration-500",
+          "bg-white outline-none",
           isExpanded
             ? "pointer-events-auto translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0"
@@ -110,8 +105,8 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
       <aside
         className={cn(
           "fixed bottom-0 right-0 top-0 z-[29]",
-          "h-[100svh] w-[100vw] transition-all duration-500 ease-customEase md:w-[20rem]",
-          "bg-background outline-none",
+          "ease-customEase h-[100svh] w-[100vw] transition-all duration-500 md:w-[20rem]",
+          "bg-white outline-none",
           isExpanded
             ? "pointer-events-auto translate-x-0 opacity-100"
             : "pointer-events-none translate-x-full opacity-0",
@@ -125,6 +120,9 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
             mainMenuBtnRef.current.focus();
           }
         }}
+        // onTouchStart={handleTouchStart}
+        // onTouchMove={handleTouchMove}
+        // onTouchEnd={handleTouchEnd}
         ref={sidebarRef}
       >
         {children}
@@ -132,3 +130,7 @@ export default function InnerWrapper({ children }: { children: React.ReactNode }
     </>
   );
 }
+```
+
+The above code demonstrates sidebar functionality for assigning
+and unassigning event listeners for touch-based closing.

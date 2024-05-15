@@ -22,8 +22,10 @@ export const SidebarItem = memo(function SidebarItem({
         className={cn(
           "group/sidebarItem relative h-[3.75rem] w-full transition-all",
           "flex items-center gap-3",
-          pathname === href ? "bg-primary text-primary-foreground" : "",
-          "hover:bg-primary"
+          pathname === href
+            ? "bg-gradient-to-r from-primary to-background to-80% text-primary-foreground"
+            : "",
+          "hover:bg-gradient-to-r hover:from-primary hover:via-primary hover:via-40% hover:to-background hover:to-60% hover:text-primary-foreground"
         )}
         tabIndex={isExpanded ? 0 : -1}
         onClick={toggle}
