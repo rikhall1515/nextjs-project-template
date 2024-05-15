@@ -179,7 +179,3 @@ header.scrolled {
 span.special {
   @apply bg-gradient-to-b from-foreground/40 to-foreground bg-clip-text text-transparent;
 }
-
-.sidebarMenu {
-  transform: translateX(calc(80 / (1+exp(-(--sidebar-menu-end-x - --sidebar-menu-start-x - 160)))));
-}
